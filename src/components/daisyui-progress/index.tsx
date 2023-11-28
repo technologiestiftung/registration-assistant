@@ -32,8 +32,7 @@ export function ProgressForm() {
   ];
 
   return (
-    <div className="flex flex-col items-center gap-4 pb-12">
-      <h2 className="text-lg font-bold">Progressbar</h2>
+    <div className="flex flex-col items-center gap-4 pb-12 pt-8">
       <progress
         className="progress progress-primary w-56"
         value={currentStep + 1}
