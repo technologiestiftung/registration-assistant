@@ -4,7 +4,7 @@ function App() {
   return (
     <>
       <main className="flex flex-col items-center gap-6 px-5">
-        <div className="flex flex-col gap-2 pt-3">
+        <div className="flex min-w-[22rem] max-w-[26rem] flex-col gap-2 px-6 pt-3">
           <h1 className="text-lg font-bold">
             Willkommen beim Anmeldungs-Assistent!
           </h1>
