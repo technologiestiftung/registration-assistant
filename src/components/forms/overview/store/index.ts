@@ -6,8 +6,6 @@ export const useOverviewStore = create<OverviewStore>((set, get) => ({
   docs: getLocalStorage(),
 
   setRequiredDocs(requiredDocs: Partial<OverviewDocs>) {
-    console.log(requiredDocs);
-
     const docs = {
       ...get().docs,
     };

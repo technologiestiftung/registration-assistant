@@ -1,12 +1,7 @@
 import { useFamilyStore } from "./store";
+import {useProgressStore} from "../../daisyui-progress/store";
 
-export function Family({
-  goToPreviousStep,
-  goToNextStep,
-}: {
-  goToPreviousStep: () => void;
-  goToNextStep: () => void;
-}) {
+export function Family() {
   const isRegisteringWholeFamily = useFamilyStore(
     (state) => state.isRegisteringWholeFamily,
   );
@@ -23,6 +18,14 @@ export function Family({
   const setHasChild = useFamilyStore((state) => state.setHasChild);
 
   const isValid = useFamilyStore((state) => state.isValid);
+
+  const goToPreviousStep = useProgressStore(
+    (state) => state.decrementCurrentStep,
+  );
+  const goToNextStep = useProgressStore(
+    (state) => state.incrementCurrentStep,
+  );
+
 
   const options = ["Ja", "Nein"];
 
@@ -100,7 +103,7 @@ export function Family({
         )}
 
         <div className="flex h-full w-full items-end justify-between">
-          <button className="btn" type="button" onClick={goToPreviousStep}>
+          <button className="btn" type="button" onClick={() => goToPreviousStep()}>
             Zurück
           </button>
           <div title={!isValid() ? "Bitte wähle zuerst eine Option" : ""}>
