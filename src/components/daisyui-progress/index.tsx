@@ -1,4 +1,4 @@
-import { Intro } from "../forms/intro";
+// import { Intro } from "../forms/intro";
 import { FirstRegistration } from "../forms/first-registration";
 import { Nationality } from "../forms/nationality";
 import { Family } from "../forms/family";
@@ -10,7 +10,7 @@ export function ProgressForm() {
   const currentStep = useProgressStore((state) => state.currentStep);
 
   const steps = [
-    <Intro />,
+    // <Intro />,
     <FirstRegistration />,
     <Nationality />,
     <Family />,
@@ -22,7 +22,7 @@ export function ProgressForm() {
     <div className="flex flex-col items-center gap-4 pb-12 pt-8">
       <progress
         className="progress progress-primary w-56"
-        value={currentStep}
+        value={currentStep + 1}
         max={steps.length - 1}
       />
       <div className="flex w-full justify-center">
