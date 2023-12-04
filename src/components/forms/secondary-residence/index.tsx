@@ -1,5 +1,7 @@
 import { useSecondaryResidenceStore } from "./store";
 import { useProgressStore } from "../../daisyui-progress/store";
+import { useI18nStore } from "../../../i18n/store";
+import { t } from "../../../i18n/translations";
 
 export function SecondaryResidence() {
   const isSecondaryResidence = useSecondaryResidenceStore(
@@ -37,7 +39,9 @@ export function SecondaryResidence() {
   );
   const goToNextStep = useProgressStore((state) => state.incrementCurrentStep);
 
-  const options = ["Ja", "Nein"];
+  const language = useI18nStore((state) => state.language);
+
+  const options = ["yes", "no"];
 
   return (
     <div className="flex h-full flex-col gap-3">
@@ -50,20 +54,20 @@ export function SecondaryResidence() {
         }}
       >
         <div className="flex flex-col gap-1">
-          <h3>Hast du schon eine andere Wohnung gemeldet?</h3>
+          <h3>{t("second-registration.q1", language)}</h3>
           {options.map((option) => (
             <div key={option} className="flex gap-2">
               <input
                 type="radio"
                 name="radio-1"
-                onChange={() => setIsSecondaryResidence(option === "Ja")}
+                onChange={() => setIsSecondaryResidence(option === "yes")}
                 checked={
-                  (option === "Ja" && isSecondaryResidence === true) ||
-                  (option === "Nein" && isSecondaryResidence === false)
+                  (option === "yes" && isSecondaryResidence === true) ||
+                  (option === "no" && isSecondaryResidence === false)
                 }
                 className="radio"
               />
-              <label>{option}</label>
+              <label>{t(option, language)}</label>
             </div>
           ))}
         </div>
@@ -71,44 +75,44 @@ export function SecondaryResidence() {
         {isSecondaryResidence && (
           <>
             <div className="flex flex-col gap-1">
-              <h3>Wohnst du im Ausland?</h3>
+              <h3>{t("second-registration.q2", language)}</h3>
               {options.map((option) => (
                 <div key={option} className="flex gap-2">
                   <input
                     type="radio"
                     name="radio-2"
-                    onChange={() => setHasMainResidenceAbroad(option === "Ja")}
+                    onChange={() => setHasMainResidenceAbroad(option === "yes")}
                     checked={
-                      (option === "Ja" && hasMainResidenceAbroad === true) ||
-                      (option === "Nein" && hasMainResidenceAbroad === false)
+                      (option === "yes" && hasMainResidenceAbroad === true) ||
+                      (option === "no" && hasMainResidenceAbroad === false)
                     }
                     className="radio"
                   />
-                  <label>{option}</label>
+                  <label>{t(option, language)}</label>
                 </div>
               ))}
             </div>
 
             {hasMainResidenceAbroad && (
               <div className="flex flex-col gap-1">
-                <h3>Möchtest du für mehr als drei Monate in Berlin bleiben?</h3>
+                <h3>{t("second-registration.q3", language)}</h3>
                 {options.map((option) => (
                   <div key={option} className="flex gap-2">
                     <input
                       type="radio"
                       name="radio-3"
                       onChange={() =>
-                        setIsRegisteringForMoreThanThreeMonths(option === "Ja")
+                        setIsRegisteringForMoreThanThreeMonths(option === "yes")
                       }
                       checked={
-                        (option === "Ja" &&
+                        (option === "yes" &&
                           isRegisteringForMoreThanThreeMonths === true) ||
-                        (option === "Nein" &&
+                        (option === "no" &&
                           isRegisteringForMoreThanThreeMonths === false)
                       }
                       className="radio"
                     />
-                    <label>{option}</label>
+                    <label>{t(option, language)}</label>
                   </div>
                 ))}
               </div>
@@ -116,26 +120,24 @@ export function SecondaryResidence() {
 
             {hasMainResidenceAbroad === false && (
               <div className="flex flex-col gap-1">
-                <h3>
-                  Möchtest du für mehr als sechs Monate in Berlin bleiben?
-                </h3>
+                <h3>{t("second-registration.q4", language)}</h3>
                 {options.map((option) => (
                   <div key={option} className="flex gap-2">
                     <input
                       type="radio"
                       name="radio-3"
                       onChange={() =>
-                        setIsRegisteringForMoreThanSixMonths(option === "Ja")
+                        setIsRegisteringForMoreThanSixMonths(option === "yes")
                       }
                       checked={
-                        (option === "Ja" &&
+                        (option === "yes" &&
                           isRegisteringForMoreThanSixMonths === true) ||
-                        (option === "Nein" &&
+                        (option === "no" &&
                           isRegisteringForMoreThanSixMonths === false)
                       }
                       className="radio"
                     />
-                    <label>{option}</label>
+                    <label>{t(option, language)}</label>
                   </div>
                 ))}
               </div>
@@ -149,11 +151,11 @@ export function SecondaryResidence() {
             type="button"
             onClick={() => goToPreviousStep()}
           >
-            Zurück
+            {t("button.back", language)}
           </button>
-          <div title={!isValid() ? "Bitte wähle zuerst eine Option" : ""}>
+          <div title={!isValid() ? t("button.next.tooltip", language) : ""}>
             <button className="btn" disabled={!isValid()} type="submit">
-              Weiter
+              {t("button.next", language)}
             </button>
           </div>
         </div>

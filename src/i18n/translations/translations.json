@@ -1,0 +1,96 @@
+{
+  "de": {
+    "de": "Deutsch",
+    "en": "English",
+
+    "yes": "Ja",
+    "no": "Nein",
+
+    "button.back": "Zurück",
+    "button.next": "Weiter",
+    "button.next.tooltip": "Wähle bitte zuerst eine Option aus",
+
+    "intro.title": "Willkommen beim Anmeldungs-Assistent!",
+    "intro.text": "Wir möchten Ihnen gerne einige Fragen stellen. Wir brauchen diese Informationen, um für Ihren Anmeldetermin eine spezielle Liste mit Dokumenten zu erstellen.",
+
+    "first-registration.q1": "Meldest du dich zum ersten Mal in Berlin an?",
+    "first-registration.q2": "Bist du verheiratet?",
+
+    "nationality.q1": "Bist du Deutsche:r?",
+    "nationality.q2": "Bist du unter 13?",
+    "nationality.q3": "Bist du nach Deutschland geflüchtet?",
+
+    "family.q1": "Möchtest du deine ganze Familie anmelden?",
+    "family.q2": "Möchtest du mehr als 2 Personen anmelden?",
+    "family.q3": "Zieht ein Kind mit dir um?",
+
+    "second-registration.q1": "Hast du schon eine andere Wohnung gemeldet?",
+    "second-registration.q2": "Wohnst du im Ausland?",
+    "second-registration.q3": "Möchtest du für mehr als drei Monate in Berlin bleiben?",
+    "second-registration.q4": "Möchtest du für mehr als sechs Monate in Berlin bleiben?",
+
+    "overview.title": "Dokumente für deinen Anmelde-Termin",
+    "overview.text": "Bitte bringe die Dokumente ausgefüllt, unterschrieben und gedruckt zu deinem Termin mit.",
+
+    "additionalRegistrationForm": "Weiterer Meldeschein",
+    "childPassport": "Kinderreisepass deines Kindes",
+    "guardianConsent": "Einverständniserklärung von Sorgeberechtigten",
+    "birthCertificate": "Geburtsurkunde",
+    "marriageCertificate": "Heiratsurkunde",
+    "germanChildPassport": "Dein eigener Kinderreisepass",
+    "germanIdOrPassport": "Dein Personalausweis oder Reisepass",
+    "foreignIdOrPassport": "Dein Nationalpass, Passersatzpapiere oder Reisepass",
+    "confirmationOfPermanentAccommodationForUkrainianRefugees":
+    "Bestätigung über dauerhafte Gewährung einer Unterkunft für ukrainische Geflüchtete",
+    "supplement": "Beiblatt zur Anmeldung / Hauptwohnungserklärung",
+    "movingInConfirmation": "Einzugsbestätigung des Wohnungsgebers / Vermieters",
+    "registrationForm": "Anmeldeformular"
+  },
+  "en": {
+    "de": "Deutsch",
+    "en": "English",
+
+    "yes": "Yes",
+    "no": "No",
+
+    "button.back": "Back",
+    "button.next": "Next",
+    "button.next.tooltip": "Please select an option first",
+
+    "intro.title": "Welcome to the registration assistant!",
+    "intro.text": "We would like to ask you a few questions. We need this information to create a list of documents required for your registration appointment.",
+
+    "first-registration.q1": "Are you registering in Berlin for the first time?",
+    "first-registration.q2": "Are you married?",
+
+    "nationality.q1": "Are you German?",
+    "nationality.q2": "Are you younger than 13?",
+    "nationality.q3": "Are you seeking Asylum in Germany?",
+
+    "family.q1": "Would you like to register your whole family?",
+    "family.q2": "Would you like to register more than 2 people?",
+    "family.q3": "Is a child moving with you?",
+
+    "second-registration.q1": "Are you already registered in another city?",
+    "second-registration.q2": "Is this city abroad?",
+    "second-registration.q3": "Would you like to stay in Berlin for more than three months?",
+    "second-registration.q4": "Would you like to stay in Berlin for more than six months?",
+
+    "overview.title": "Documents for your registration appointment",
+    "overview.text": "Please bring the completed, signed and printed documents with you to your appointment.",
+
+    "additionalRegistrationForm": "Additional registration form(s)",
+    "childPassport": "Passport of your child",
+    "guardianConsent": "Declaration of consent from legal guardians",
+    "birthCertificate": "Birth certificate",
+    "marriageCertificate": "Marriage certificate",
+    "germanChildPassport": "Your own german child passport",
+    "germanIdOrPassport": "Your german ID card or german passport",
+    "foreignIdOrPassport": "Your ID card, passport or passport replacement document",
+    "confirmationOfPermanentAccommodationForUkrainianRefugees":
+    "Confirmation of permanent accommodation for Ukrainian refugees",
+    "supplement": "Supplement to the registration form / declaration of the main residence",
+    "movingInConfirmation": "Confirmation of the landlord / lessor",
+    "registrationForm": "Registration form"
+  }
+}

@@ -1,6 +1,7 @@
-import { labels } from "./labels.ts";
 import { useOverviewStore } from "./store";
 import { useProgressStore } from "../../daisyui-progress/store";
+import { useI18nStore } from "../../../i18n/store";
+import { t } from "../../../i18n/translations";
 
 export function Overview() {
   const requiredDocs = useOverviewStore((state) => state.docs);
@@ -8,6 +9,8 @@ export function Overview() {
   const goToPreviousStep = useProgressStore(
     (state) => state.decrementCurrentStep,
   );
+
+  const language = useI18nStore((state) => state.language);
 
   const items = [
     ...Array.from(
@@ -17,14 +20,9 @@ export function Overview() {
 
   return (
     <div className="flex h-full flex-col gap-4">
-      <h2 className="text-lg font-semibold">
-        Dokumente für deinen Anmelde-Termin
-      </h2>
+      <h2 className="text-lg font-semibold">{t("overview.title", language)}</h2>
 
-      <p>
-        Bitte bringe die Dokumente ausgefüllt, unterschrieben und gedruckt zu
-        deinem Termin mit.
-      </p>
+      <p>{t("overview.text", language)}</p>
 
       <ul>
         {items.map(([key, value], index) => (
@@ -41,17 +39,18 @@ export function Overview() {
               onChange={() => setDocs({ [key]: !value })}
             />
             {/* @ts-ignore */}
-            {labels[key]}
+            {t(key, language)}
           </li>
         ))}
       </ul>
+
       <div className="flex h-full w-full items-end justify-between">
         <button
           className="btn"
           type="button"
           onClick={() => goToPreviousStep()}
         >
-          Zurück
+          {t("button.back", language)}
         </button>
       </div>
     </div>
