@@ -1,5 +1,7 @@
 import { useNationalityStore } from "./store";
 import { useProgressStore } from "../../daisyui-progress/store";
+import { useI18nStore } from "../../../i18n/store";
+import { t } from "../../../i18n/translations";
 
 export function Nationality() {
   const isGerman = useNationalityStore((state) => state.isGerman);
@@ -22,7 +24,9 @@ export function Nationality() {
   );
   const goToNextStep = useProgressStore((state) => state.incrementCurrentStep);
 
-  const options = ["Ja", "Nein"];
+  const language = useI18nStore((state) => state.language);
+
+  const options = ["yes", "no"];
 
   return (
     <div className="flex h-full flex-col gap-3">
@@ -35,40 +39,40 @@ export function Nationality() {
         }}
       >
         <div className="flex flex-col gap-1">
-          <h3>Bist du Deutsche:r?</h3>
+          <h3>{t("nationality.q1", language)}</h3>
           {options.map((option) => (
             <div key={option} className="flex gap-2">
               <input
                 type="radio"
                 name="radio-1"
-                onChange={() => setIsGerman(option === "Ja")}
+                onChange={() => setIsGerman(option === "yes")}
                 checked={
-                  (option === "Ja" && isGerman === true) ||
-                  (option === "Nein" && isGerman === false)
+                  (option === "yes" && isGerman === true) ||
+                  (option === "no" && isGerman === false)
                 }
                 className="radio"
               />
-              <label>{option}</label>
+              <label>{t(option, language)}</label>
             </div>
           ))}
         </div>
 
         {isGerman && (
           <div className="flex flex-col gap-1">
-            <h3>Bist du unter 13?</h3>
+            <h3>{t("nationality.q2", language)}</h3>
             {options.map((option) => (
               <div key={option} className="flex gap-2">
                 <input
                   type="radio"
                   name="radio-2"
-                  onChange={() => setIsUnder13(option === "Ja")}
+                  onChange={() => setIsUnder13(option === "yes")}
                   checked={
-                    (option === "Ja" && isUnder13 === true) ||
-                    (option === "Nein" && isUnder13 === false)
+                    (option === "yes" && isUnder13 === true) ||
+                    (option === "no" && isUnder13 === false)
                   }
                   className="radio"
                 />
-                <label>{option}</label>
+                <label>{t(option, language)}</label>
               </div>
             ))}
           </div>
@@ -76,20 +80,20 @@ export function Nationality() {
 
         {isGerman === false && (
           <div className="flex flex-col gap-1">
-            <h3>Bist du Geflüchtete:r aus der Ukraine?</h3>
+            <h3>{t("nationality.q3", language)}</h3>
             {options.map((option) => (
               <div key={option} className="flex gap-2">
                 <input
                   type="radio"
                   name="radio-3"
-                  onChange={() => setIsUkrainianRefugee(option === "Ja")}
+                  onChange={() => setIsUkrainianRefugee(option === "yes")}
                   checked={
-                    (option === "Ja" && isUkrainianRefugee === true) ||
-                    (option === "Nein" && isUkrainianRefugee === false)
+                    (option === "yes" && isUkrainianRefugee === true) ||
+                    (option === "no" && isUkrainianRefugee === false)
                   }
                   className="radio"
                 />
-                <label>{option}</label>
+                <label>{t(option, language)}</label>
               </div>
             ))}
           </div>
@@ -101,11 +105,11 @@ export function Nationality() {
             type="button"
             onClick={() => goToPreviousStep()}
           >
-            Zurück
+            {t("button.back", language)}
           </button>
-          <div title={!isValid() ? "Bitte wähle zuerst eine Option" : ""}>
+          <div title={!isValid() ? t("button.next.tooltip", language) : ""}>
             <button className="btn" disabled={!isValid()} type="submit">
-              Weiter
+              {t("button.next", language)}
             </button>
           </div>
         </div>

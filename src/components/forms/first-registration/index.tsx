@@ -1,5 +1,7 @@
 import { useFirstRegistrationStore } from "./store";
-import {useProgressStore} from "../../daisyui-progress/store";
+import { useProgressStore } from "../../daisyui-progress/store";
+import { t } from "../../../i18n/translations";
+import { useI18nStore } from "../../../i18n/store";
 
 export function FirstRegistration() {
   const isFirstRegistration = useFirstRegistrationStore(
@@ -17,11 +19,11 @@ export function FirstRegistration() {
   const goToPreviousStep = useProgressStore(
     (state) => state.decrementCurrentStep,
   );
-  const goToNextStep = useProgressStore(
-    (state) => state.incrementCurrentStep,
-  );
+  const goToNextStep = useProgressStore((state) => state.incrementCurrentStep);
 
-  const options = ["Ja", "Nein"];
+  const language = useI18nStore((state) => state.language);
+
+  const options = ["yes", "no"];
 
   return (
     <div className="flex h-full flex-col gap-3">
@@ -34,52 +36,56 @@ export function FirstRegistration() {
         }}
       >
         <div className="flex flex-col gap-1">
-          <h3>Meldest du dich zum ersten Mal in Berlin an?</h3>
+          <h3>{t("first-registration.q1", language)}</h3>
           {options.map((option) => (
             <div key={option} className="flex gap-2">
               <input
                 type="radio"
                 name="radio-1"
-                onChange={() => setIsFirstRegistration(option === "Ja")}
+                onChange={() => setIsFirstRegistration(option === "yes")}
                 checked={
-                  (option === "Ja" && isFirstRegistration === true) ||
-                  (option === "Nein" && isFirstRegistration === false)
+                  (option === "yes" && isFirstRegistration === true) ||
+                  (option === "no" && isFirstRegistration === false)
                 }
                 className="radio"
               />
-              <label>{option}</label>
+              <label>{t(option, language)}</label>
             </div>
           ))}
         </div>
 
         {isFirstRegistration && (
           <div className="flex flex-col gap-1">
-            <h3>Bist du verheiratet?</h3>
+            <h3>{t("first-registration.q2", language)}</h3>
             {options.map((option) => (
               <div key={option} className="flex gap-2">
                 <input
                   type="radio"
                   name="radio-2"
-                  onChange={() => setIsMarried(option === "Ja")}
+                  onChange={() => setIsMarried(option === "yes")}
                   checked={
-                    (option === "Ja" && isMarried === true) ||
-                    (option === "Nein" && isMarried === false)
+                    (option === "yes" && isMarried === true) ||
+                    (option === "no" && isMarried === false)
                   }
                   className="radio"
                 />
-                <label>{option}</label>
+                <label>{t(option, language)}</label>
               </div>
             ))}
           </div>
         )}
 
         <div className="flex h-full w-full items-end justify-between">
-          <button className="btn" type="button" onClick={() => goToPreviousStep()}>
-            Zurück
+          <button
+            className="btn"
+            type="button"
+            onClick={() => goToPreviousStep()}
+          >
+            {t("button.back", language)}
           </button>
-          <div title={!isValid() ? "Bitte wähle zuerst eine Option" : ""}>
+          <div title={!isValid() ? t("button.next.tooltip", language) : ""}>
             <button className="btn" disabled={!isValid()} type="submit">
-              Weiter
+              {t("button.next", language)}
             </button>
           </div>
         </div>

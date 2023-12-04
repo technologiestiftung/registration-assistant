@@ -1,10 +1,13 @@
 import { ProgressForm } from "./components/daisyui-progress";
+import { LanguageSelect } from "./components/language-select";
 
 function App() {
   return (
     <>
-      <main className="flex flex-col items-center gap-6 px-5">
+      <main className="flex flex-col items-center px-5">
         <ProgressForm />
+
+        <LanguageSelect />
       </main>
     </>
   );
