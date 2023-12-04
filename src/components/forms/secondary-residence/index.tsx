@@ -1,12 +1,7 @@
 import { useSecondaryResidenceStore } from "./store";
+import { useProgressStore } from "../../daisyui-progress/store";
 
-export function SecondaryResidence({
-  goToPreviousStep,
-  goToNextStep,
-}: {
-  goToPreviousStep: () => void;
-  goToNextStep: () => void;
-}) {
+export function SecondaryResidence() {
   const isSecondaryResidence = useSecondaryResidenceStore(
     (state) => state.isSecondaryResidence,
   );
@@ -36,6 +31,11 @@ export function SecondaryResidence({
   );
 
   const isValid = useSecondaryResidenceStore((state) => state.isValid);
+
+  const goToPreviousStep = useProgressStore(
+    (state) => state.decrementCurrentStep,
+  );
+  const goToNextStep = useProgressStore((state) => state.incrementCurrentStep);
 
   const options = ["Ja", "Nein"];
 
@@ -144,7 +144,11 @@ export function SecondaryResidence({
         )}
 
         <div className="flex h-full w-full items-end justify-between">
-          <button className="btn" type="button" onClick={goToPreviousStep}>
+          <button
+            className="btn"
+            type="button"
+            onClick={() => goToPreviousStep()}
+          >
             Zurück
           </button>
           <div title={!isValid() ? "Bitte wähle zuerst eine Option" : ""}>

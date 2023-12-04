@@ -1,13 +1,13 @@
 import { labels } from "./labels.ts";
 import { useOverviewStore } from "./store";
+import { useProgressStore } from "../../daisyui-progress/store";
 
-export function Overview({
-  goToPreviousStep,
-}: {
-  goToPreviousStep: () => void;
-}) {
+export function Overview() {
   const requiredDocs = useOverviewStore((state) => state.docs);
   const setDocs = useOverviewStore((state) => state.setDocs);
+  const goToPreviousStep = useProgressStore(
+    (state) => state.decrementCurrentStep,
+  );
 
   const items = [
     ...Array.from(
@@ -16,8 +16,16 @@ export function Overview({
   ];
 
   return (
-    <div className="flex h-full flex-col gap-3">
-      <h3 className="text-center">Übersicht</h3>
+    <div className="flex h-full flex-col gap-4">
+      <h2 className="text-lg font-semibold">
+        Dokumente für deinen Anmelde-Termin
+      </h2>
+
+      <p>
+        Bitte bringe die Dokumente ausgefüllt, unterschrieben und gedruckt zu
+        deinem Termin mit.
+      </p>
+
       <ul>
         {items.map(([key, value], index) => (
           <li
@@ -38,7 +46,11 @@ export function Overview({
         ))}
       </ul>
       <div className="flex h-full w-full items-end justify-between">
-        <button className="btn" type="button" onClick={goToPreviousStep}>
+        <button
+          className="btn"
+          type="button"
+          onClick={() => goToPreviousStep()}
+        >
           Zurück
         </button>
       </div>

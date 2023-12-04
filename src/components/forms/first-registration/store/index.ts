@@ -31,8 +31,6 @@ export const useFirstRegistrationStore = create<FirstRegistrationStore>(
         marriageCertificate: !!isMarried,
       };
 
-      console.log(requiredDocs);
-
       set({
         isMarried,
         requiredDocs,

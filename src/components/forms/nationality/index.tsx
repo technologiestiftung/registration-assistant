@@ -1,12 +1,7 @@
 import { useNationalityStore } from "./store";
+import { useProgressStore } from "../../daisyui-progress/store";
 
-export function Nationality({
-  goToPreviousStep,
-  goToNextStep,
-}: {
-  goToPreviousStep: () => void;
-  goToNextStep: () => void;
-}) {
+export function Nationality() {
   const isGerman = useNationalityStore((state) => state.isGerman);
   const setIsGerman = useNationalityStore((state) => state.setIsGerman);
 
@@ -21,6 +16,11 @@ export function Nationality({
   );
 
   const isValid = useNationalityStore((state) => state.isValid);
+
+  const goToPreviousStep = useProgressStore(
+    (state) => state.decrementCurrentStep,
+  );
+  const goToNextStep = useProgressStore((state) => state.incrementCurrentStep);
 
   const options = ["Ja", "Nein"];
 
@@ -96,7 +96,11 @@ export function Nationality({
         )}
 
         <div className="flex h-full w-full items-end justify-between">
-          <button className="btn" type="button" onClick={goToPreviousStep}>
+          <button
+            className="btn"
+            type="button"
+            onClick={() => goToPreviousStep()}
+          >
             Zurück
           </button>
           <div title={!isValid() ? "Bitte wähle zuerst eine Option" : ""}>

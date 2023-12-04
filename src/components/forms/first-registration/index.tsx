@@ -1,10 +1,7 @@
 import { useFirstRegistrationStore } from "./store";
+import {useProgressStore} from "../../daisyui-progress/store";
 
-export function FirstRegistration({
-  goToNextStep,
-}: {
-  goToNextStep: () => void;
-}) {
+export function FirstRegistration() {
   const isFirstRegistration = useFirstRegistrationStore(
     (state) => state.isFirstRegistration,
   );
@@ -16,6 +13,13 @@ export function FirstRegistration({
   const setIsMarried = useFirstRegistrationStore((state) => state.setIsMarried);
 
   const isValid = useFirstRegistrationStore((state) => state.isValid);
+
+  const goToPreviousStep = useProgressStore(
+    (state) => state.decrementCurrentStep,
+  );
+  const goToNextStep = useProgressStore(
+    (state) => state.incrementCurrentStep,
+  );
 
   const options = ["Ja", "Nein"];
 
@@ -69,7 +73,10 @@ export function FirstRegistration({
           </div>
         )}
 
-        <div className="flex h-full w-full items-end justify-end">
+        <div className="flex h-full w-full items-end justify-between">
+          <button className="btn" type="button" onClick={() => goToPreviousStep()}>
+            Zurück
+          </button>
           <div title={!isValid() ? "Bitte wähle zuerst eine Option" : ""}>
             <button className="btn" disabled={!isValid()} type="submit">
               Weiter
