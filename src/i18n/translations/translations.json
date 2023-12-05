@@ -32,19 +32,24 @@
     "overview.title": "Dokumente für deinen Anmelde-Termin",
     "overview.text": "Bitte bringe die Dokumente ausgefüllt, unterschrieben und gedruckt zu deinem Termin mit.",
 
-    "additionalRegistrationForm": "Weiterer Meldeschein",
+    "additionalRegistrationForm.label": "Weitere ausgefüllte",
+    "additionalRegistrationForm.link": "Anmeldeformulare",
     "childPassport": "Kinderreisepass deines Kindes",
-    "guardianConsent": "Einverständniserklärung von Sorgeberechtigten",
+    "guardianConsent.label": "Ausgefüllte",
+    "guardianConsent.link": "Einverständniserklärung von Sorgeberechtigten",
     "birthCertificate": "Geburtsurkunde",
     "marriageCertificate": "Heiratsurkunde",
     "germanChildPassport": "Dein eigener Kinderreisepass",
     "germanIdOrPassport": "Dein Personalausweis oder Reisepass",
     "foreignIdOrPassport": "Dein Nationalpass, Passersatzpapiere oder Reisepass",
-    "confirmationOfPermanentAccommodationForUkrainianRefugees":
-    "Bestätigung über dauerhafte Gewährung einer Unterkunft für ukrainische Geflüchtete",
-    "supplement": "Beiblatt zur Anmeldung / Hauptwohnungserklärung",
-    "movingInConfirmation": "Einzugsbestätigung des Wohnungsgebers / Vermieters",
-    "registrationForm": "Anmeldeformular"
+    "confirmationOfPermanentAccommodationForUkrainianRefugees.label": "Ausgefüllte",
+    "confirmationOfPermanentAccommodationForUkrainianRefugees.link": "Bestätigung über dauerhafte Gewährung einer Unterkunft für ukrainische Geflüchtete",
+    "supplement.label": "Ausgefülltes",
+    "supplement.link": "Beiblatt zur Anmeldung / Hauptwohnungserklärung",
+    "movingInConfirmation.label": "Ausgefüllte",
+    "movingInConfirmation.link": "Einzugsbestätigung des Wohnungsgebers / Vermieters",
+    "registrationForm.label": "Ausgefülltes",
+    "registrationForm.link": "Anmeldeformular"
   },
   "en": {
     "de": "Deutsch",
@@ -65,7 +70,7 @@
 
     "nationality.q1": "Are you German?",
     "nationality.q2": "Are you younger than 13?",
-    "nationality.q3": "Are you seeking Asylum in Germany?",
+    "nationality.q3": "Are you seeking asylum in Germany?",
 
     "family.q1": "Would you like to register your whole family?",
     "family.q2": "Would you like to register more than 2 people?",
@@ -79,18 +84,23 @@
     "overview.title": "Documents for your registration appointment",
     "overview.text": "Please bring the completed, signed and printed documents with you to your appointment.",
 
-    "additionalRegistrationForm": "Additional registration form(s)",
+    "additionalRegistrationForm.label": "Filled out additional",
+    "additionalRegistrationForm.link": "registration form(s)",
     "childPassport": "Passport of your child",
-    "guardianConsent": "Declaration of consent from legal guardians",
+    "guardianConsent.label": "Filled out",
+    "guardianConsent.link": "declaration of consent from legal guardians",
     "birthCertificate": "Birth certificate",
     "marriageCertificate": "Marriage certificate",
     "germanChildPassport": "Your own german child passport",
     "germanIdOrPassport": "Your german ID card or german passport",
     "foreignIdOrPassport": "Your ID card, passport or passport replacement document",
-    "confirmationOfPermanentAccommodationForUkrainianRefugees":
-    "Confirmation of permanent accommodation for Ukrainian refugees",
-    "supplement": "Supplement to the registration form / declaration of the main residence",
-    "movingInConfirmation": "Confirmation of the landlord / lessor",
-    "registrationForm": "Registration form"
+    "confirmationOfPermanentAccommodationForUkrainianRefugees.label": "Filled out",
+    "confirmationOfPermanentAccommodationForUkrainianRefugees.link": "confirmation of permanent accommodation for Ukrainian refugees",
+    "supplement.label": "Filled out",
+    "supplement.link": "Supplement to the registration form / declaration of the main residence",
+    "movingInConfirmation.label": "Filled out",
+    "movingInConfirmation.link": "Confirmation of the landlord/giver of the apartment",
+    "registrationForm.label": "Filled out",
+    "registrationForm.link": "registration form"
   }
 }
