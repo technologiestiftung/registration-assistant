@@ -2,6 +2,7 @@ import { useOverviewStore } from "./store";
 import { useProgressStore } from "../../daisyui-progress/store";
 import { useI18nStore } from "../../../i18n/store";
 import { t } from "../../../i18n/translations";
+import { DocumentLabel } from "./document-label.tsx";
 
 export function Overview() {
   const requiredDocs = useOverviewStore((state) => state.docs);
@@ -12,7 +13,7 @@ export function Overview() {
 
   const language = useI18nStore((state) => state.language);
 
-  const items = [
+  const documents = [
     ...Array.from(
       Object.entries(requiredDocs).filter(([, value]) => value !== null),
     ),
@@ -25,7 +26,7 @@ export function Overview() {
       <p>{t("overview.text", language)}</p>
 
       <ul>
-        {items.map(([key, value], index) => (
+        {documents.map(([key, value], index) => (
           <li
             key={key}
             className={`flex w-full gap-2 rounded px-4 py-3 ${
@@ -38,8 +39,7 @@ export function Overview() {
               checked={value === true}
               onChange={() => setDocs({ [key]: !value })}
             />
-            {/* @ts-ignore */}
-            {t(key, language)}
+            <DocumentLabel id={key} />
           </li>
         ))}
       </ul>
