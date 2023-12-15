@@ -7,11 +7,21 @@ export function getLocalStorage(): FirstRegistration {
 
   if (!foundItemJson) {
     return {
-      isMarried: null,
       isFirstRegistration: null,
+      isMarried: null,
+      isRegisteringSpouse: null,
+      hasChild: null,
+      isRegisteringChild: null,
+      isRegisteringMoreThanTwo: null,
       requiredDocs: {
         birthCertificate: false,
         marriageCertificate: false,
+        idDocumentForSpouse: false,
+        childBirthCertificate: false,
+        custodyDeclaration: false,
+        guardianConsent: false,
+        idDocumentForChild: false,
+        additionalRegistrationForm: false,
       },
     };
   }
@@ -25,11 +35,21 @@ export function getLocalStorage(): FirstRegistration {
   }
 
   return {
-    isMarried: null,
     isFirstRegistration: null,
+    isMarried: null,
+    isRegisteringSpouse: null,
+    hasChild: null,
+    isRegisteringChild: null,
+    isRegisteringMoreThanTwo: null,
     requiredDocs: {
       birthCertificate: false,
       marriageCertificate: false,
+      idDocumentForSpouse: false,
+      childBirthCertificate: false,
+      custodyDeclaration: false,
+      guardianConsent: false,
+      idDocumentForChild: false,
+      additionalRegistrationForm: false,
     },
   };
 }

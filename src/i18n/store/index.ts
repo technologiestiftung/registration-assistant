@@ -8,5 +8,6 @@ export const useI18nStore = create<i18nStore>((set, get) => ({
   async setLanguage(language: AvailableLanguages) {
     set({ language });
     setLocalStorage(get());
+    document.documentElement.lang = language;
   },
 }));

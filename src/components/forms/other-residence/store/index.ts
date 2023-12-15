@@ -3,19 +3,19 @@ import { SecondaryResidenceStore } from "./types.ts";
 import { getLocalStorage, setLocalStorage } from "./local-storage.ts";
 import { useOverviewStore } from "../../overview/store";
 
-export const useSecondaryResidenceStore = create<SecondaryResidenceStore>(
+export const useOtherResidenceStore = create<SecondaryResidenceStore>(
   (set, get) => ({
     requiredDocs: getLocalStorage().requiredDocs,
 
-    isSecondaryResidence: getLocalStorage().isSecondaryResidence,
-    setIsSecondaryResidence(isSecondaryResidence) {
+    hasOtherResidence: getLocalStorage().hasOtherResidence,
+    setHasOtherResidence(hasOtherResidence) {
       const requiredDocs = {
         supplement: false,
       };
 
       set({
-        isSecondaryResidence,
-        hasMainResidenceAbroad: null,
+        hasOtherResidence,
+        isOtherResidenceAbroad: null,
         isRegisteringForMoreThanThreeMonths: null,
         isRegisteringForMoreThanSixMonths: null,
         requiredDocs,
@@ -25,14 +25,14 @@ export const useSecondaryResidenceStore = create<SecondaryResidenceStore>(
       useOverviewStore.getState().setRequiredDocs(requiredDocs);
     },
 
-    hasMainResidenceAbroad: getLocalStorage().hasMainResidenceAbroad,
-    setHasMainResidenceAbroad(hasMainResidenceAbroad) {
+    isOtherResidenceAbroad: getLocalStorage().isOtherResidenceAbroad,
+    setIsOtherResidenceAbroad(isOtherResidenceAbroad) {
       const requiredDocs = {
         supplement: false,
       };
 
       set({
-        hasMainResidenceAbroad,
+        isOtherResidenceAbroad,
         isRegisteringForMoreThanThreeMonths: null,
         isRegisteringForMoreThanSixMonths: null,
         requiredDocs,
@@ -48,9 +48,7 @@ export const useSecondaryResidenceStore = create<SecondaryResidenceStore>(
       isRegisteringForMoreThanThreeMonths,
     ) {
       const requiredDocs = {
-        supplement:
-          get().hasMainResidenceAbroad === true &&
-          isRegisteringForMoreThanThreeMonths === true,
+        supplement: false,
       };
 
       set({
@@ -69,7 +67,7 @@ export const useSecondaryResidenceStore = create<SecondaryResidenceStore>(
     ) => {
       const requiredDocs = {
         supplement:
-          get().hasMainResidenceAbroad === false &&
+          get().isOtherResidenceAbroad === false &&
           isRegisteringForMoreThanSixMonths === true,
       };
 
@@ -80,20 +78,6 @@ export const useSecondaryResidenceStore = create<SecondaryResidenceStore>(
 
       setLocalStorage(get());
       useOverviewStore.getState().setRequiredDocs(requiredDocs);
-    },
-
-    isValid: () => {
-      const {
-        isSecondaryResidence,
-        isRegisteringForMoreThanThreeMonths,
-        isRegisteringForMoreThanSixMonths,
-      } = get();
-
-      return (
-        isSecondaryResidence === false ||
-        typeof isRegisteringForMoreThanThreeMonths === "boolean" ||
-        typeof isRegisteringForMoreThanSixMonths === "boolean"
-      );
     },
   }),
 );

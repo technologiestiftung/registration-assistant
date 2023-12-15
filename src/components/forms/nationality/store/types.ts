@@ -1,29 +1,30 @@
 import { z } from "zod";
 
 const NationalityDocsSchema = z.object({
-  germanChildPassport: z.boolean(),
+  germanIdOrPassportOrChildPassport: z.boolean(),
   germanIdOrPassport: z.boolean(),
-  foreignIdOrPassport: z.boolean(),
-  confirmationOfPermanentAccommodationForUkrainianRefugees: z.boolean(),
+  confirmationOfCustodian: z.boolean(),
+  euIdOrPassportOrReplacement: z.boolean(),
+  nonEuIdOrPassportOrReplacement: z.boolean(),
 });
 
 export const NationalitySchema = z.object({
   requiredDocs: NationalityDocsSchema,
   isGerman: z.boolean().nullable(),
-  isUnder13: z.boolean().nullable(),
-  isUkrainianRefugee: z.boolean().nullable(),
+  isGermanUnder16: z.boolean().nullable(),
+  isEuropean: z.boolean().nullable(),
+  isNonGermanUnder16: z.boolean().nullable(),
+  isRefugee: z.boolean().nullable(),
 });
 
 export type Nationality = z.infer<typeof NationalitySchema>;
 
 const Nationality = NationalitySchema.extend({
   setIsGerman: z.function().args(z.boolean()).returns(z.void()),
-  setIsUnder13: z.function().args(z.boolean().nullable()).returns(z.void()),
-  setIsUkrainianRefugee: z
-    .function()
-    .args(z.boolean().nullable())
-    .returns(z.void()),
-  isValid: z.function().args(z.void()).returns(z.boolean()),
+  setIsGermanUnder16: z.function().args(z.boolean()).returns(z.void()),
+  setIsEuropean: z.function().args(z.boolean()).returns(z.void()),
+  setIsNonGermanUnder16: z.function().args(z.boolean()).returns(z.void()),
+  setIsRefugee: z.function().args(z.boolean()).returns(z.void()),
 });
 
 export type NationalityStore = z.infer<typeof Nationality>;

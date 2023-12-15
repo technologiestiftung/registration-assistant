@@ -1,29 +1,99 @@
 import { create } from "zustand";
 import { ProgressStore } from "./types.ts";
 import { getLocalStorage, setLocalStorage } from "./local-storage.ts";
+import {
+  handleHasChildNextStep,
+  handleHasOtherResidenceNextStep,
+  handleIsGermanNextStep,
+  handleIsGermanUnder16NextStep,
+  handleIsMarriedNextStep,
+  handleIsOtherResidenceAbroadNextStep,
+  handleIsRegisteringChildNextStep,
+  handleIsRegisteringForMoreThanThreeMonthsNextStep,
+} from "./next-steps.ts";
+import {
+  handleHasChildPreviousStep,
+  handleHasOtherResidencePreviousStep,
+  handleIsEuropeanPreviousStep,
+  handleIsGermanPreviousStep,
+  handleIsRegisteringForMoreThanSixMonthsPreviousStep,
+  handleOverviewPreviousStep,
+} from "./previous-steps.ts";
 
 export const useProgressStore = create<ProgressStore>((set, get) => ({
   currentStep: getLocalStorage().currentStep,
+  maxSteps: 16,
+
   setCurrentStep(currentStep: number) {
     set({ currentStep });
     setLocalStorage(get());
   },
 
-  incrementCurrentStep() {
-    const canIncrement = get().currentStep < 5;
+  goToNextStep() {
+    const canIncrement = get().currentStep < get().maxSteps;
     if (!canIncrement) {
       return;
     }
 
-    get().setCurrentStep(get().currentStep + 1);
+    switch (get().currentStep) {
+      case 2:
+        handleIsMarriedNextStep();
+        return;
+      case 4:
+        handleHasChildNextStep();
+        return;
+      case 5:
+        handleIsRegisteringChildNextStep();
+        return;
+      case 7:
+        handleIsGermanNextStep();
+        return;
+      case 8:
+        handleIsGermanUnder16NextStep();
+        return;
+      case 12:
+        handleHasOtherResidenceNextStep();
+        return;
+      case 13:
+        handleIsOtherResidenceAbroadNextStep();
+        return;
+      case 14:
+        handleIsRegisteringForMoreThanThreeMonthsNextStep();
+        return;
+      default:
+        get().setCurrentStep(get().currentStep + 1);
+        return;
+    }
   },
 
-  decrementCurrentStep() {
+  goToPreviousStep() {
     const canDecrement = get().currentStep > 0;
     if (!canDecrement) {
       return;
     }
 
-    get().setCurrentStep(get().currentStep - 1);
+    switch (get().currentStep) {
+      case 4:
+        handleHasChildPreviousStep();
+        return;
+      case 7:
+        handleIsGermanPreviousStep();
+        return;
+      case 9:
+        handleIsEuropeanPreviousStep();
+        return;
+      case 12:
+        handleHasOtherResidencePreviousStep();
+        return;
+      case 15:
+        handleIsRegisteringForMoreThanSixMonthsPreviousStep();
+        return;
+      case 16:
+        handleOverviewPreviousStep();
+        return;
+      default:
+        get().setCurrentStep(get().currentStep - 1);
+        return;
+    }
   },
 }));

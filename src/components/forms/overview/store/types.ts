@@ -7,16 +7,18 @@ export const OverviewDocsSchema = z.object({
   birthCertificate: z.boolean().nullable(),
   marriageCertificate: z.boolean().nullable(),
 
-  germanChildPassport: z.boolean().nullable(),
-  germanIdOrPassport: z.boolean().nullable(),
-  foreignIdOrPassport: z.boolean().nullable(),
-  confirmationOfPermanentAccommodationForUkrainianRefugees: z
-    .boolean()
-    .nullable(),
-
-  additionalRegistrationForm: z.boolean().nullable(),
-  childPassport: z.boolean().nullable(),
+  idDocumentForSpouse: z.boolean().nullable(),
+  childBirthCertificate: z.boolean().nullable(),
+  custodyDeclaration: z.boolean().nullable(),
+  idDocumentForChild: z.boolean().nullable(),
   guardianConsent: z.boolean().nullable(),
+  additionalRegistrationForm: z.boolean().nullable(),
+
+  germanIdOrPassportOrChildPassport: z.boolean().nullable(),
+  germanIdOrPassport: z.boolean().nullable(),
+  confirmationOfCustodian: z.boolean().nullable(),
+  euIdOrPassportOrReplacement: z.boolean().nullable(),
+  nonEuIdOrPassportOrReplacement: z.boolean().nullable(),
 
   supplement: z.boolean().nullable(),
 });

@@ -7,7 +7,7 @@ export function LanguageSelect() {
   const setLanguage = useI18nStore((state) => state.setLanguage);
 
   return (
-    <div className="pointer-hand group flex cursor-pointer items-center gap-1 rounded-lg bg-gray-100 pl-4">
+    <div className="pointer-hand hover:border-berlin-red hover:bg-berlin-red group flex cursor-pointer items-center gap-1 border-2 border-black bg-white pl-4 hover:text-white">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         fill="none"
@@ -23,7 +23,7 @@ export function LanguageSelect() {
         />
       </svg>
       <select
-        className="select w-full max-w-xs bg-gray-100 hover:bg-gray-200"
+        className="group-hover:bg-berlin-red select w-full max-w-xs rounded-none bg-white group-hover:text-white"
         id={"language-select"}
         onChange={(e) => setLanguage(e.target.value)}
       >
