@@ -9,16 +9,19 @@ export const useNationalityStore = create<NationalityStore>((set, get) => ({
   isGerman: getLocalStorage().isGerman,
   setIsGerman(isGerman) {
     const requiredDocs = {
-      germanChildPassport: false,
-      germanIdOrPassport: isGerman,
-      foreignIdOrPassport: !isGerman,
-      confirmationOfPermanentAccommodationForUkrainianRefugees: false,
+      germanIdOrPassportOrChildPassport: false,
+      germanIdOrPassport: false,
+      euIdOrPassportOrReplacement: false,
+      nonEuIdOrPassportOrReplacement: false,
+      confirmationOfCustodian: false,
     };
 
     set({
       isGerman,
-      isUnder13: null,
-      isUkrainianRefugee: null,
+      isGermanUnder16: null,
+      isEuropean: null,
+      isRefugee: null,
+      isNonGermanUnder16: null,
       requiredDocs,
     });
 
@@ -26,17 +29,18 @@ export const useNationalityStore = create<NationalityStore>((set, get) => ({
     useOverviewStore.getState().setRequiredDocs(requiredDocs);
   },
 
-  isUnder13: getLocalStorage().isUnder13,
-  setIsUnder13(isUnder13) {
+  isGermanUnder16: getLocalStorage().isGermanUnder16,
+  setIsGermanUnder16(isGermanUnder16) {
     const requiredDocs = {
-      germanChildPassport: !!isUnder13,
-      germanIdOrPassport: !isUnder13,
-      foreignIdOrPassport: false,
-      confirmationOfPermanentAccommodationForUkrainianRefugees: false,
+      germanIdOrPassportOrChildPassport: isGermanUnder16,
+      germanIdOrPassport: !isGermanUnder16,
+      euIdOrPassportOrReplacement: false,
+      nonEuIdOrPassportOrReplacement: false,
+      confirmationOfCustodian: isGermanUnder16,
     };
 
     set({
-      isUnder13,
+      isGermanUnder16,
       requiredDocs,
     });
 
@@ -44,18 +48,16 @@ export const useNationalityStore = create<NationalityStore>((set, get) => ({
     useOverviewStore.getState().setRequiredDocs(requiredDocs);
   },
 
-  isUkrainianRefugee: getLocalStorage().isUkrainianRefugee,
-  setIsUkrainianRefugee(isUkrainianRefugee) {
+  isEuropean: getLocalStorage().isEuropean,
+  setIsEuropean(isEuropean) {
     const requiredDocs = {
-      germanChildPassport: false,
-      germanIdOrPassport: false,
-      foreignIdOrPassport: true,
-      confirmationOfPermanentAccommodationForUkrainianRefugees:
-        !!isUkrainianRefugee,
+      ...get().requiredDocs,
+      euIdOrPassportOrReplacement: isEuropean,
+      nonEuIdOrPassportOrReplacement: !isEuropean,
     };
 
     set({
-      isUkrainianRefugee,
+      isEuropean,
       requiredDocs,
     });
 
@@ -63,10 +65,26 @@ export const useNationalityStore = create<NationalityStore>((set, get) => ({
     useOverviewStore.getState().setRequiredDocs(requiredDocs);
   },
 
-  isValid: () => {
-    const { isUnder13, isUkrainianRefugee } = get();
-    return (
-      typeof isUnder13 === "boolean" || typeof isUkrainianRefugee === "boolean"
-    );
+  isNonGermanUnder16: getLocalStorage().isNonGermanUnder16,
+  setIsNonGermanUnder16(isNonGermanUnder16: boolean) {
+    const requiredDocs = {
+      ...get().requiredDocs,
+      confirmationOfCustodian: isNonGermanUnder16,
+    };
+
+    set({
+      isNonGermanUnder16,
+      requiredDocs,
+    });
+
+    setLocalStorage(get());
+    useOverviewStore.getState().setRequiredDocs(requiredDocs);
+  },
+
+  isRefugee: getLocalStorage().isRefugee,
+  setIsRefugee(isRefugee) {
+    set({ isRefugee });
+
+    setLocalStorage(get());
   },
 }));

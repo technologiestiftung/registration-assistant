@@ -9,15 +9,23 @@ export function getLocalStorage(): OverviewDocs {
     return {
       registrationForm: false,
       movingInConfirmation: false,
+
       birthCertificate: null,
       marriageCertificate: null,
-      germanChildPassport: null,
-      germanIdOrPassport: null,
-      foreignIdOrPassport: null,
-      confirmationOfPermanentAccommodationForUkrainianRefugees: null,
-      additionalRegistrationForm: null,
-      childPassport: null,
+
+      idDocumentForSpouse: null,
+      childBirthCertificate: null,
+      custodyDeclaration: null,
+      idDocumentForChild: null,
       guardianConsent: null,
+      additionalRegistrationForm: null,
+
+      germanIdOrPassportOrChildPassport: null,
+      germanIdOrPassport: null,
+      confirmationOfCustodian: null,
+      euIdOrPassportOrReplacement: null,
+      nonEuIdOrPassportOrReplacement: null,
+
       supplement: null,
     };
   }
@@ -33,15 +41,23 @@ export function getLocalStorage(): OverviewDocs {
   return {
     registrationForm: false,
     movingInConfirmation: false,
+
     birthCertificate: null,
     marriageCertificate: null,
-    germanChildPassport: null,
-    germanIdOrPassport: null,
-    foreignIdOrPassport: null,
-    confirmationOfPermanentAccommodationForUkrainianRefugees: null,
-    additionalRegistrationForm: null,
-    childPassport: null,
+
+    idDocumentForSpouse: null,
+    childBirthCertificate: null,
+    custodyDeclaration: null,
+    idDocumentForChild: null,
     guardianConsent: null,
+    additionalRegistrationForm: null,
+
+    germanIdOrPassportOrChildPassport: null,
+    germanIdOrPassport: null,
+    confirmationOfCustodian: null,
+    euIdOrPassportOrReplacement: null,
+    nonEuIdOrPassportOrReplacement: null,
+
     supplement: null,
   };
 }

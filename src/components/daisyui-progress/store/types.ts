@@ -7,9 +7,10 @@ export const ProgressSchema = z.object({
 export type Progress = z.infer<typeof ProgressSchema>;
 
 const ProgressStoreSchema = ProgressSchema.extend({
+  maxSteps: z.number(),
   setCurrentStep: z.function().args(z.number()).returns(z.void()),
-  incrementCurrentStep: z.function().args(z.void()).returns(z.void()),
-  decrementCurrentStep: z.function().args(z.void()).returns(z.void()),
+  goToNextStep: z.function().args(z.void()).returns(z.void()),
+  goToPreviousStep: z.function().args(z.void()).returns(z.void()),
 });
 
 export type ProgressStore = z.infer<typeof ProgressStoreSchema>;

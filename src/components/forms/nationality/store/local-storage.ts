@@ -8,13 +8,16 @@ export function getLocalStorage(): Nationality {
   if (!foundItemJson) {
     return {
       isGerman: null,
-      isUnder13: null,
-      isUkrainianRefugee: null,
+      isGermanUnder16: null,
+      isEuropean: null,
+      isRefugee: null,
+      isNonGermanUnder16: null,
       requiredDocs: {
-        germanChildPassport: false,
+        germanIdOrPassportOrChildPassport: false,
+        confirmationOfCustodian: false,
         germanIdOrPassport: false,
-        foreignIdOrPassport: false,
-        confirmationOfPermanentAccommodationForUkrainianRefugees: false,
+        euIdOrPassportOrReplacement: false,
+        nonEuIdOrPassportOrReplacement: false,
       },
     };
   }
@@ -29,13 +32,16 @@ export function getLocalStorage(): Nationality {
 
   return {
     isGerman: null,
-    isUnder13: null,
-    isUkrainianRefugee: null,
+    isGermanUnder16: null,
+    isEuropean: null,
+    isRefugee: null,
+    isNonGermanUnder16: null,
     requiredDocs: {
-      germanChildPassport: false,
+      germanIdOrPassportOrChildPassport: false,
+      confirmationOfCustodian: false,
       germanIdOrPassport: false,
-      foreignIdOrPassport: false,
-      confirmationOfPermanentAccommodationForUkrainianRefugees: false,
+      euIdOrPassportOrReplacement: false,
+      nonEuIdOrPassportOrReplacement: false,
     },
   };
 }
