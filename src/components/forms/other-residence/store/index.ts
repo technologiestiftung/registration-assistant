@@ -48,7 +48,9 @@ export const useOtherResidenceStore = create<SecondaryResidenceStore>(
       isRegisteringForMoreThanThreeMonths,
     ) {
       const requiredDocs = {
-        supplement: false,
+        supplement:
+          get().isOtherResidenceAbroad === true &&
+          isRegisteringForMoreThanThreeMonths === true,
       };
 
       set({
