@@ -1,5 +1,5 @@
 import { useOtherResidenceStore } from "./store";
-import { useProgressStore } from "../../daisyui-progress/store";
+import { useProgressStore } from "../../steps/store";
 import { useI18nStore } from "../../../i18n/store";
 import { t } from "../../../i18n/translations";
 import { RadioInput } from "../../radio-input";

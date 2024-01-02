@@ -23,7 +23,7 @@ import {
   IsRegisteringForMoreThanSixMonths,
 } from "../forms/other-residence";
 
-export function ProgressForm() {
+export function Steps() {
   const currentStep = useProgressStore((state) => state.currentStep);
 
   const steps = [

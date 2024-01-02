@@ -1,6 +1,7 @@
 import { create } from "zustand";
-import { ProgressStore } from "./types.ts";
+import { ProgressStore, StepsKeys } from "./types.ts";
 import { getLocalStorage, setLocalStorage } from "./local-storage.ts";
+import { steps } from "./steps.ts";
 import {
   handleHasChildNextStep,
   handleHasOtherResidenceNextStep,
@@ -27,6 +28,10 @@ export const useProgressStore = create<ProgressStore>((set, get) => ({
   setCurrentStep(currentStep: number) {
     set({ currentStep });
     setLocalStorage(get());
+  },
+
+  goTo(step: StepsKeys) {
+    get().setCurrentStep(steps[step]);
   },
 
   goToNextStep() {
