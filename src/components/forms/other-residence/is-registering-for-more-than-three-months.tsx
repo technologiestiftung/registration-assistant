@@ -36,7 +36,7 @@ export function IsRegisteringForMoreThanThreeMonths() {
           {t("other-residence.q3", language)}
           <div
             className="tooltip text-start"
-            data-tip="Falls ja, müssen eventuell Dokumente wie Geburtsurkunde und Heiratsurkunde für den Termin mitgebracht werden."
+            data-tip={t("other-residence.q3.tooltip", language)}
           >
             <button
               type="button"

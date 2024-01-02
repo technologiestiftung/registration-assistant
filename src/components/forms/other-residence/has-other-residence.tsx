@@ -34,7 +34,7 @@ export function HasOtherResidence() {
           {t("other-residence.q1", language)}
           <div
             className="tooltip text-start"
-            data-tip="Falls ja, müssen eventuell Dokumente wie Geburtsurkunde und Heiratsurkunde für den Termin mitgebracht werden."
+            data-tip={t("other-residence.q1.tooltip", language)}
           >
             <button
               type="button"
