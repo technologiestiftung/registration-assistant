@@ -14,6 +14,8 @@
     "address": "Adresse",
     "plan-route": "Route planen",
 
+    "print": "Drucken",
+
     "button.back": "Zurück",
     "button.next": "Weiter",
     "button.next.tooltip": "Bitte beantworte die Frage zuerst.",
@@ -62,7 +64,7 @@
     "other-residence.q4.hint.link.label": "Termin stornieren",
 
     "overview.title": "Deine Dokumenten-Checkliste",
-    "overview.text": "Hier ist eine Liste von Dokumenten, die Du für Deine Anmeldung benötigst. Du kannst diese Liste nutzen, um Dich auf Deinen Termin vorzubereiten. Setze einen Haken für Dokumente, die Du bereits hast. Falls Dir noch Dokumente fehlen, komm' zu einem späteren Zeitpunkt zurück - dein Fortschritt wird gespeichert! Bitte bringe alle Dokumente <b>ausgefüllt</b>, <b>unterschrieben</b> und <b>ausgedruckt</b> zu Deinem Termin mit.",
+    "overview.text": "Hier ist eine Liste von Dokumenten, die Du für Deine Anmeldung benötigst. <span class=\"print:hidden\">Du kannst diese Liste nutzen, um Dich auf Deinen Termin vorzubereiten. Setze einen Haken für Dokumente, die Du bereits hast. Falls Dir noch Dokumente fehlen, komm' zu einem späteren Zeitpunkt zurück - dein Fortschritt wird gespeichert!</span> Bitte bringe alle Dokumente <b>ausgefüllt</b>, <b>unterschrieben</b> und <b>ausgedruckt</b> zu Deinem Termin mit.",
 
     "registrationForm": "Anmeldeformular",
     "registrationForm.tooltip": "Dieses Dokument ist immer notwendig.",
@@ -111,6 +113,8 @@
     "your-appointment": "Your appointment",
     "address": "Address",
     "plan-route": "plan route",
+
+    "print": "Print",
 
     "button.back": "Back",
     "button.next": "Next",

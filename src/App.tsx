@@ -6,10 +6,12 @@ function App() {
   return (
     <>
       <div className="flex w-full md:hidden">
+        {/* print hidden */}
         <Progress id={"mobile-progress-bar"} />
       </div>
 
       <header className="flex w-full justify-end py-5 pr-5">
+        {/* print hidden */}
         <LanguageSelect />
       </header>
 
@@ -18,6 +20,7 @@ function App() {
       </main>
 
       <div className="hidden w-full md:flex">
+        {/* print hidden */}
         <Progress id={"desktop-progress-bar"} />
       </div>
     </>

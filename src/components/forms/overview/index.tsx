@@ -21,7 +21,15 @@ export function Overview() {
     <div className="flex h-full flex-col gap-4">
       <Appointment />
 
-      <h2 className="font-bold">{t("overview.title", language)}</h2>
+      <h2 className="flex w-full items-center justify-between font-bold">
+        {t("overview.title", language)}{" "}
+        <button
+          onClick={() => window.print()}
+          className="border-2 border-black bg-white px-5 py-2 font-normal hover:border-berlin-red hover:bg-berlin-red hover:text-white print:hidden"
+        >
+          {t("print", language)}
+        </button>
+      </h2>
 
       <p dangerouslySetInnerHTML={{ __html: t("overview.text", language) }}></p>
 
@@ -31,7 +39,7 @@ export function Overview() {
         ))}
       </ul>
 
-      <div className="flex h-full w-full items-end justify-between">
+      <div className="flex h-full w-full items-end justify-between print:hidden">
         <button
           className="border-2 border-black bg-white px-5 py-2 hover:border-berlin-red hover:bg-berlin-red hover:text-white"
           type="button"
