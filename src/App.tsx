@@ -1,4 +1,4 @@
-import { ProgressForm } from "./components/daisyui-progress";
+import { Steps } from "./components/steps";
 import { LanguageSelect } from "./components/language-select";
 import { Footer } from "./components/footer";
 import { Progress } from "./components/progress";
@@ -26,7 +26,7 @@ function App() {
           </header>
 
           <main className="flex h-full items-end justify-center px-5 pb-11">
-            <ProgressForm />
+            <Steps />
           </main>
 
           <div className="hidden w-full md:flex">

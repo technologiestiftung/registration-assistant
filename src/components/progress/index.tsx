@@ -1,4 +1,4 @@
-import { useProgressStore } from "../daisyui-progress/store";
+import { useProgressStore } from "../steps/store";
 
 export function Progress() {
   const currentStep = useProgressStore((state) => state.currentStep);

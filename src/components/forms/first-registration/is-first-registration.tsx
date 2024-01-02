@@ -2,7 +2,7 @@ import { useFirstRegistrationStore } from "./store";
 import { t } from "../../../i18n/translations";
 import { RadioInput } from "../../radio-input";
 import { useI18nStore } from "../../../i18n/store";
-import { useProgressStore } from "../../daisyui-progress/store";
+import { useProgressStore } from "../../steps/store";
 
 export function IsFirstRegistration() {
   const isFirstRegistration = useFirstRegistrationStore(
