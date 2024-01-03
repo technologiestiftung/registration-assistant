@@ -1,6 +1,7 @@
 import { useProgressStore } from "../../steps/store";
 import { useI18nStore } from "../../../i18n/store";
 import { t } from "../../../i18n/translations";
+import { Appointment } from "../../appointment";
 
 export function Intro() {
   const goToNextStep = useProgressStore((state) => state.goToNextStep);
@@ -22,30 +23,7 @@ export function Intro() {
 
           <p>{t("intro.p1", language)}</p>
 
-          <p>
-            <b>Dein Termin:</b> 15. Dezember 2023, 15 Uhr
-            <br />
-            <b>Adresse</b>: Schlesische Straße 27A, 10997 Berlin (
-            <a
-              href="https://www.google.de/maps/place/Schlesische+Str.+27A,+10997+Berlin/@52.4984664,13.4448928,17z/data=!3m1!4b1!4m6!3m5!1s0x47a84e53becc02e7:0x39bee44340592b1!8m2!3d52.4984664!4d13.4474677!16s%2Fg%2F11b_242msd?entry=ttu"
-              target="_blank"
-              className="text-blue-500 underline visited:text-purple-500"
-            >
-              Route planen
-            </a>
-            )
-          </p>
-
-          {/*<p>*/}
-          {/*  {t("intro.p2", language)}{" "}*/}
-          {/*  <a*/}
-          {/*    href="https://service.berlin.de/dienstleistung/120686/"*/}
-          {/*    target="_blank"*/}
-          {/*    className="text-blue-500 underline visited:text-purple-500"*/}
-          {/*  >*/}
-          {/*    {t("intro.p2.link", language)}*/}
-          {/*  </a>*/}
-          {/*</p>*/}
+          <Appointment />
         </div>
         <div className="flex h-full w-full items-end justify-end">
           <button

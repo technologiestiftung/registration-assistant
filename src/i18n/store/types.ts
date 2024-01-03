@@ -1,6 +1,9 @@
 import { z } from "zod";
 
-export const availableLanguages: readonly [string, ...string[]] = ["de", "en"];
+export const availableLanguages: readonly [string, ...string[]] = [
+  "de-DE",
+  "en-DE",
+];
 
 const availableLanguagesSchema = z.enum(availableLanguages);
 

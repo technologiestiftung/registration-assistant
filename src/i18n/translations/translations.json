@@ -1,12 +1,16 @@
 {
-  "de": {
-    "de": "Deutsch",
-    "en": "English",
+  "de-DE": {
+    "de-DE": "Deutsch",
+    "en-DE": "English",
 
     "yes": "Ja",
     "no": "Nein",
 
     "download": "Herunterladen",
+
+    "your-appointment": "Dein Termin",
+    "address": "Adresse",
+    "plan-route": "Route planen",
 
     "button.back": "Zurück",
     "button.next": "Weiter",
@@ -91,14 +95,18 @@
     "supplement": "Beiblatt zur Anmeldung/Hauptwohnungserklärung",
     "supplement.tooltip": "Dieses Dokument ist notwendig, weil Du weiterhin in einer weiteren Wohnung gemeldet bleiben möchtest."
   },
-  "en": {
-    "de": "Deutsch",
-    "en": "English",
+  "en-DE": {
+    "de-DE": "Deutsch",
+    "en-DE": "English",
 
     "yes": "Yes",
     "no": "No",
 
     "download": "Download",
+
+    "your-appointment": "Your appointment",
+    "address": "Address",
+    "plan-route": "plan route",
 
     "button.back": "Back",
     "button.next": "Next",
@@ -133,7 +141,6 @@
     "nationality.q5": "Are you a refugee?",
     "nationality.q5.tooltip": "If yes, the Flüchtlingsbürgeramt may be responsible for your registration.",
     "nationality.q5.hint": "Note: You may have to register via the Flüchtlingsbürgeramt (Refugee Citizens Office). You can find more information here:",
-    
 
     "other-residence.q1": "Will you remain registered at another address?",
     "other-residence.q1.tooltip": "If yes, you may need a supplemental registration form or declaration of main residence.",
