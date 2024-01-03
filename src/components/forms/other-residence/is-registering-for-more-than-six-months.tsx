@@ -35,7 +35,7 @@ export function IsRegisteringForMoreThanSixMonths() {
         <h3 className="flex w-full items-baseline justify-between gap-3">
           {t("other-residence.q4", language)}
           <div
-            className="tooltip text-start"
+            className="tooltip tooltip-left text-start sm:tooltip-top"
             data-tip={t("other-residence.q4.tooltip", language)}
           >
             <button
@@ -75,7 +75,7 @@ export function IsRegisteringForMoreThanSixMonths() {
         <a
           href="https://service.berlin.de/terminvereinbarung/termin/manage/"
           target="_blank"
-          className="text-blue-500 underline visited:text-purple-500"
+          className="text-blue-700 underline visited:text-purple-500"
         >
           {t("other-residence.q3.hint.link.label", language)}{" "}
         </a>
@@ -83,7 +83,11 @@ export function IsRegisteringForMoreThanSixMonths() {
 
       <div className="flex h-full w-full flex-row-reverse items-end justify-between pt-10">
         <div
-          className={!isValid || !needsRegistration ? "tooltip" : undefined}
+          className={
+            !isValid || !needsRegistration
+              ? "tooltip tooltip-left text-start sm:tooltip-top"
+              : undefined
+          }
           data-tip={
             !isValid || !needsRegistration
               ? t(

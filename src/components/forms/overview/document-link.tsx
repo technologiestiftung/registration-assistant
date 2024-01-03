@@ -43,11 +43,11 @@ export function DocumentLink({ id }: { id: string }) {
   }
 
   return (
-    <div className="bg-berlin-light-gray h-full w-full px-4 py-2">
+    <div className="h-full w-full bg-berlin-light-gray px-4 py-2">
       <a
         href={url}
         target="_blank"
-        className="flex w-fit gap-1 text-blue-500 underline visited:text-purple-500"
+        className="flex w-fit gap-1 text-blue-700 underline visited:text-purple-500"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"

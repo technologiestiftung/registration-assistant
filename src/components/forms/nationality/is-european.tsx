@@ -29,7 +29,7 @@ export function IsEuropean() {
         <h3 className="flex w-full items-baseline justify-between gap-3">
           {t("nationality.q3", language)}
           <div
-            className="tooltip text-start"
+            className="tooltip tooltip-left text-start sm:tooltip-top"
             data-tip={t("nationality.q3.tooltip", language)}
           >
             <button
@@ -64,7 +64,11 @@ export function IsEuropean() {
 
       <div className="flex h-full w-full flex-row-reverse items-end justify-between pt-10">
         <div
-          className={!isValid ? "tooltip" : undefined}
+          className={
+            !isValid
+              ? "tooltip tooltip-left text-start sm:tooltip-top"
+              : undefined
+          }
           data-tip={!isValid ? t("button.next.tooltip", language) : undefined}
         >
           <button
