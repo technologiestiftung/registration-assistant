@@ -26,10 +26,36 @@ export function DocumentCheckbox({
               className="h-5 w-5"
               id={id}
               checked={value === true}
-              onChange={() => setDocs({ [id]: !value })}
+              onChange={() => {
+                setDocs({ [id]: !value });
+
+                if (matchMedia("(prefers-reduced-motion: reduce)").matches) {
+                  return;
+                }
+
+                const docs = [
+                  ...Array.from(
+                    Object.entries(useOverviewStore.getState().docs).filter(
+                      ([, value]) => value !== null,
+                    ),
+                  ),
+                ];
+
+                if (docs.some(([, value]) => value === false)) {
+                  return;
+                }
+
+                useOverviewStore.getState().requestConfetti();
+              }}
             />
           </div>
-          {t(id, language)}
+          <span
+            className={
+              value === true ? "text-gray-400 line-through" : undefined
+            }
+          >
+            {t(id, language)}
+          </span>
         </div>
 
         <div
