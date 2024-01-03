@@ -1,17 +1,17 @@
 import { useProgressStore } from "../steps/store";
 
-export function Progress() {
+export function Progress({ id }: { id: string }) {
   const currentStep = useProgressStore((state) => state.currentStep);
   const maxStep = useProgressStore((state) => state.maxSteps);
 
   return (
     <>
-      <label htmlFor="progress-bar" className="sr-only">
+      <label htmlFor={id} className="sr-only">
         Current progress: {currentStep} of {maxStep} steps
       </label>
       <progress
         className="h-1 w-full bg-transparent"
-        id="progress-bar"
+        id={id}
         value={currentStep}
         max={maxStep}
       />

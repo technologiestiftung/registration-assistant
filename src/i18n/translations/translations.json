@@ -8,6 +8,8 @@
 
     "download": "Herunterladen",
 
+    "language-select": "Sprache auswählen",
+
     "button.back": "Zurück",
     "button.next": "Weiter",
     "button.next.tooltip": "Bitte beantworte die Frage zuerst.",
@@ -100,6 +102,8 @@
 
     "download": "Download",
 
+    "language-select": "Select language",
+
     "button.back": "Back",
     "button.next": "Next",
     "button.next.tooltip": "Please answer the question first.",
@@ -133,7 +137,6 @@
     "nationality.q5": "Are you a refugee?",
     "nationality.q5.tooltip": "If yes, the Flüchtlingsbürgeramt may be responsible for your registration.",
     "nationality.q5.hint": "Note: You may have to register via the Flüchtlingsbürgeramt (Refugee Citizens Office). You can find more information here:",
-    
 
     "other-residence.q1": "Will you remain registered at another address?",
     "other-residence.q1.tooltip": "If yes, you may need a supplemental registration form or declaration of main residence.",
