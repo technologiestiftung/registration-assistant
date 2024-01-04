@@ -77,7 +77,7 @@ export function IsRegisteringForMoreThanSixMonths() {
           target="_blank"
           className="text-blue-700 underline visited:text-purple-500"
         >
-          {t("other-residence.q3.hint.link.label", language)}{" "}
+          {t("other-residence.q4.hint.link.label", language)}{" "}
         </a>
       </p>
 
