@@ -46,7 +46,6 @@ export function DocumentLink({ id }: { id: string }) {
     <div className="h-full w-full bg-berlin-light-gray px-4 py-2">
       <a
         href={url}
-        target="_blank"
         className="flex w-fit gap-1 text-blue-700 underline visited:text-purple-500"
       >
         <svg
