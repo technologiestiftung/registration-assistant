@@ -92,7 +92,7 @@ export function IsRegisteringForMoreThanThreeMonths() {
           data-tip={
             !isValid || !needsRegistration
               ? t(
-                  showHint ? "other-residence.q4.hint" : "button.next.tooltip",
+                  showHint ? "other-residence.q3.hint" : "button.next.tooltip",
                   language,
                 )
               : undefined
