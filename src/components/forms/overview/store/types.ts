@@ -27,6 +27,10 @@ export type OverviewDocs = z.infer<typeof OverviewDocsSchema>;
 
 const OverviewStoreSchema = z.object({
   docs: OverviewDocsSchema,
+  isParticlesReady: z.boolean(),
+  isParticlesRequested: z.boolean(),
+  loadParticles: z.function(),
+  requestConfetti: z.function(),
   setRequiredDocs: z
     .function()
     .args(OverviewDocsSchema.partial())
