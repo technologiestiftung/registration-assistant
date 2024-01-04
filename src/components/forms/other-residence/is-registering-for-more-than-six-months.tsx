@@ -71,7 +71,7 @@ export function IsRegisteringForMoreThanSixMonths() {
       </div>
 
       <p className={`${showHint ? "block" : "hidden"}`}>
-        {t("other-residence.q3.hint", language)}{" "}
+        {t("other-residence.q4.hint", language)}{" "}
         <a
           href="https://service.berlin.de/terminvereinbarung/termin/manage/"
           target="_blank"
