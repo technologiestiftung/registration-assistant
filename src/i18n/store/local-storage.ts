@@ -7,7 +7,7 @@ export function getLocalStorage(): i18n {
 
   if (!foundItemJson) {
     return {
-      language: "de",
+      language: "de-DE",
     };
   }
 
@@ -20,7 +20,7 @@ export function getLocalStorage(): i18n {
   }
 
   return {
-    language: "de",
+    language: "de-DE",
   };
 }
 

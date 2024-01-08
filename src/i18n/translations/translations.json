@@ -1,7 +1,7 @@
 {
-  "de": {
-    "de": "Deutsch",
-    "en": "English",
+  "de-DE": {
+    "de-DE": "Deutsch",
+    "en-DE": "English",
 
     "yes": "Ja",
     "no": "Nein",
@@ -9,6 +9,10 @@
     "download": "Herunterladen",
 
     "language-select": "Sprache auswählen",
+
+    "your-appointment": "Dein Termin",
+    "address": "Adresse",
+    "plan-route": "Route planen",
 
     "button.back": "Zurück",
     "button.next": "Weiter",
@@ -93,9 +97,9 @@
     "supplement": "Beiblatt zur Anmeldung/Hauptwohnungserklärung",
     "supplement.tooltip": "Dieses Dokument ist notwendig, weil Du weiterhin in einer weiteren Wohnung gemeldet bleiben möchtest."
   },
-  "en": {
-    "de": "Deutsch",
-    "en": "English",
+  "en-DE": {
+    "de-DE": "Deutsch",
+    "en-DE": "English",
 
     "yes": "Yes",
     "no": "No",
@@ -103,6 +107,10 @@
     "download": "Download",
 
     "language-select": "Select language",
+
+    "your-appointment": "Your appointment",
+    "address": "Address",
+    "plan-route": "plan route",
 
     "button.back": "Back",
     "button.next": "Next",
