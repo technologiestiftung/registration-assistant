@@ -35,7 +35,12 @@ export function Overview() {
 
       <div className="flex h-full w-full flex-row-reverse items-end justify-between print:hidden">
         <button
-          onClick={() => window.print()}
+          onClick={() => {
+            const originalTitle = document.title;
+            document.title = "Dokumenten-Checkliste-Bürgeramt";
+            window.print();
+            document.title = originalTitle;
+          }}
           className="flex gap-1 border-2 border-black bg-white px-5 py-2 font-normal hover:border-berlin-red hover:bg-berlin-red hover:text-white print:hidden"
         >
           {t("print", language)}
