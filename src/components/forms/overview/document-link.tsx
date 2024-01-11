@@ -43,7 +43,7 @@ export function DocumentLink({ id }: { id: string }) {
   }
 
   return (
-    <div className="h-full w-full bg-berlin-light-gray px-4 py-2">
+    <div className="h-full w-full bg-berlin-light-gray px-4 py-2 print:hidden">
       <a
         href={url}
         className="flex w-fit gap-1 text-blue-700 underline visited:text-purple-500"

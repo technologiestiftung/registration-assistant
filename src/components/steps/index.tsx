@@ -47,7 +47,7 @@ export function Steps() {
   ];
 
   return (
-    <div className="flex w-[22rem] flex-col items-end gap-4">
+    <div className="flex w-[22rem] flex-col items-end gap-4 print:w-full">
       {steps[currentStep]}
     </div>
   );
