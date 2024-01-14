@@ -3,6 +3,9 @@ import { useProgressStore } from "../../steps/store";
 import { useI18nStore } from "../../../i18n/store";
 import { t } from "../../../i18n/translations";
 import { RadioInput } from "../../radio-input";
+import { InfoButton } from "../../buttons/info-button";
+import { PrimaryButton } from "../../buttons/primary-button";
+import { SecondaryButton } from "../../buttons/secondary-button";
 
 export function IsGerman() {
   const isGerman = useNationalityStore((state) => state.isGerman);
@@ -32,12 +35,7 @@ export function IsGerman() {
             className="tooltip tooltip-left text-start sm:tooltip-top"
             data-tip={t("nationality.q1.tooltip", language)}
           >
-            <button
-              type="button"
-              className="rounded-full border-2 border-black px-2.5 font-bold hover:border-berlin-red hover:bg-berlin-red hover:text-white"
-            >
-              i
-            </button>
+            <InfoButton />
           </div>
         </h3>
         <div className="flex flex-col gap-1">
@@ -71,26 +69,17 @@ export function IsGerman() {
           }
           data-tip={!isValid ? t("button.next.tooltip", language) : undefined}
         >
-          <button
-            className={`
-              border-2 border-black bg-white 
-              px-5 py-2 hover:border-berlin-red
-              hover:bg-berlin-red hover:text-white disabled:border-berlin-black-40 
-              disabled:bg-berlin-black-10 disabled:text-berlin-black-40`}
-            disabled={!isValid}
+          <PrimaryButton
+            label={t("button.next", language)}
             type="submit"
-          >
-            {t("button.next", language)}
-          </button>
+            disabled={!isValid}
+          />
         </div>
 
-        <button
-          className="border-2 border-black bg-white px-5 py-2 hover:border-berlin-red hover:bg-berlin-red hover:text-white"
-          type="button"
-          onClick={() => goToPreviousStep()}
-        >
-          {t("button.back", language)}
-        </button>
+        <SecondaryButton
+          label={t("button.back", language)}
+          onClick={goToPreviousStep}
+        />
       </div>
     </form>
   );

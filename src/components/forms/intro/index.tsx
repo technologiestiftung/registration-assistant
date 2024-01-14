@@ -2,6 +2,7 @@ import { useProgressStore } from "../../steps/store";
 import { useI18nStore } from "../../../i18n/store";
 import { t } from "../../../i18n/translations";
 import { Appointment } from "../../appointment";
+import { PrimaryButton } from "../../buttons/primary-button";
 
 export function Intro() {
   const goToNextStep = useProgressStore((state) => state.goToNextStep);
@@ -26,12 +27,7 @@ export function Intro() {
           <Appointment />
         </div>
         <div className="flex h-full w-full items-end justify-end">
-          <button
-            className="border-2 border-black bg-white px-5 py-2 hover:border-berlin-red hover:bg-berlin-red hover:text-white"
-            type="submit"
-          >
-            {t("button.next", language)}
-          </button>
+          <PrimaryButton label={t("button.next", language)} type="submit" />
         </div>
       </form>
     </>
