@@ -1,7 +1,7 @@
 import { create } from "zustand";
 import { ProgressStore, StepsKeys } from "./types.ts";
 import { getLocalStorage, setLocalStorage } from "./local-storage.ts";
-import { steps } from "./steps.ts";
+import { reverseSteps, steps } from "./steps.ts";
 import {
   handleHasChildNextStep,
   handleHasOtherResidenceNextStep,
@@ -20,12 +20,25 @@ import {
   handleIsRegisteringForMoreThanSixMonthsPreviousStep,
   handleOverviewPreviousStep,
 } from "./previous-steps.ts";
+import { trackInteraction } from "../../feedback/matomo.ts";
+import { useI18nStore } from "../../../i18n/store";
+
+function trackStepChange(previousStep: number, currentStep: number) {
+  const previousStepKey = reverseSteps[previousStep];
+  const currentStepKey = reverseSteps[currentStep];
+
+  trackInteraction({
+    eventAction: "step-change",
+    eventName: `step change: ${previousStep} (${previousStepKey}) -> ${currentStep} (${currentStepKey}), language: ${useI18nStore.getState().language} `,
+  });
+}
 
 export const useProgressStore = create<ProgressStore>((set, get) => ({
   currentStep: getLocalStorage().currentStep,
   maxSteps: 16,
 
   setCurrentStep(currentStep: number) {
+    trackStepChange(get().currentStep, currentStep);
     set({ currentStep });
     setLocalStorage(get());
   },

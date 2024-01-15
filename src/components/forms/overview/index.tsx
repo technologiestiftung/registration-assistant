@@ -4,6 +4,7 @@ import { DocumentCheckbox } from "./document-checkbox.tsx";
 import { Appointment } from "../../appointment";
 import { SecondaryButton } from "../../buttons/secondary-button";
 import { useI18n } from "../../../i18n/hook/useI18n.tsx";
+import { trackInteraction } from "../../feedback/matomo.ts";
 
 export function Overview() {
   const requiredDocs = useOverviewStore((state) => state.docs);
@@ -38,6 +39,10 @@ export function Overview() {
           onClick={() => {
             const originalTitle = document.title;
             document.title = "Dokumenten-Checkliste-Bürgeramt";
+            trackInteraction({
+              eventAction: "button click",
+              eventName: "print document checklist",
+            });
             window.print();
             document.title = originalTitle;
           }}
