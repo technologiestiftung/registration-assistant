@@ -1,4 +1,4 @@
-import { Steps } from "./types.ts";
+import { Steps, StepsKeys } from "./types.ts";
 
 export const steps: Steps = {
   intro: 0,
@@ -19,3 +19,23 @@ export const steps: Steps = {
   isRegisteringForMoreThanSixMonths: 15,
   overview: 16,
 };
+
+export const reverseSteps: StepsKeys[] = [
+  "intro",
+  "isFirstRegistration",
+  "isMarried",
+  "isRegisteringSpouse",
+  "hasChild",
+  "isRegisteringChild",
+  "isRegisteringMoreThanTwo",
+  "isGerman",
+  "isGermanUnder16",
+  "isEuropean",
+  "isEuropeanUnder16",
+  "isRefugee",
+  "hasOtherResidence",
+  "isOtherResidenceAbroad",
+  "isRegisteringForMoreThanThreeMonths",
+  "isRegisteringForMoreThanSixMonths",
+  "overview",
+];

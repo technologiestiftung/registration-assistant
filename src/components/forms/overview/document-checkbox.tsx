@@ -2,6 +2,9 @@ import { DocumentLink } from "./document-link.tsx";
 import { useOverviewStore } from "./store";
 import { InfoButton } from "../../buttons/info-button";
 import { useI18n } from "../../../i18n/hook/useI18n";
+import { trackInteraction } from "../../feedback/matomo.ts";
+import { useI18nStore } from "../../../i18n/store";
+import { ChangeEvent } from "react";
 
 export function DocumentCheckbox({
   id,
@@ -12,6 +15,37 @@ export function DocumentCheckbox({
 }) {
   const setDocs = useOverviewStore((state) => state.setDocs);
   const t = useI18n();
+
+  const onChange = (event: ChangeEvent<HTMLInputElement>) => {
+    const currentValue = event.currentTarget.checked;
+
+    const documentCheckboxState = `${currentValue ? "checked" : "unchecked"} ${useI18nStore.getState().translations["de"]![id]} (lang: ${useI18nStore.getState().language})`;
+
+    trackInteraction({
+      eventAction: "toggle document checkbox",
+      eventName: documentCheckboxState,
+    });
+
+    setDocs({ [id]: currentValue });
+
+    if (matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      return;
+    }
+
+    const docs = [
+      ...Array.from(
+        Object.entries(useOverviewStore.getState().docs).filter(
+          ([, value]) => value !== null,
+        ),
+      ),
+    ];
+
+    if (docs.some(([, value]) => value === false)) {
+      return;
+    }
+
+    useOverviewStore.getState().requestConfetti();
+  };
 
   return (
     <li className="flex w-full flex-col items-center gap-2 border border-berlin-gray bg-berlin-lighter-gray">
@@ -26,27 +60,7 @@ export function DocumentCheckbox({
               className="h-5 w-5"
               id={id}
               checked={value === true}
-              onChange={() => {
-                setDocs({ [id]: !value });
-
-                if (matchMedia("(prefers-reduced-motion: reduce)").matches) {
-                  return;
-                }
-
-                const docs = [
-                  ...Array.from(
-                    Object.entries(useOverviewStore.getState().docs).filter(
-                      ([, value]) => value !== null,
-                    ),
-                  ),
-                ];
-
-                if (docs.some(([, value]) => value === false)) {
-                  return;
-                }
-
-                useOverviewStore.getState().requestConfetti();
-              }}
+              onChange={onChange}
             />
           </div>
           <span

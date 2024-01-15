@@ -2,11 +2,17 @@ import { create } from "zustand";
 import { AvailableLanguages, i18nStore } from "./types.ts";
 import { getLocalStorage, setLocalStorage } from "./local-storage.ts";
 import de from "../translations/de.json" assert { type: "json" };
+import { trackInteraction } from "../../components/feedback/matomo.ts";
 
 export const useI18nStore = create<i18nStore>((set, get) => ({
   language: getLocalStorage().language,
 
   async setLanguage(language: AvailableLanguages) {
+    trackInteraction({
+      eventAction: "language-select interaction",
+      eventName: `changed language to ${language} (from ${get().language})`,
+    });
+
     set({ language });
     setLocalStorage(get());
     document.documentElement.lang = language;
