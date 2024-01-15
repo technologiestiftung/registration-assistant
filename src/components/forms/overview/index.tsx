@@ -5,6 +5,7 @@ import { t } from "../../../i18n/translations";
 import { DocumentCheckbox } from "./document-checkbox.tsx";
 import { Appointment } from "../../appointment";
 import { SecondaryButton } from "../../buttons/secondary-button";
+import { Feedback } from "../../feedback";
 
 export function Overview() {
   const requiredDocs = useOverviewStore((state) => state.docs);
@@ -68,6 +69,8 @@ export function Overview() {
           onClick={goToPreviousStep}
         />
       </div>
+
+      <Feedback />
     </div>
   );
 }
