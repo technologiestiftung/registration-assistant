@@ -1,57 +1,32 @@
 ![](https://img.shields.io/badge/Built%20with%20%E2%9D%A4%EF%B8%8F-at%20Technologiestiftung%20Berlin-blue)
 
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-2-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 # Registration Assistant
 
-## TODO (after you generated the repo)
-
-- [ ] Review the content of the README.md and adjust to your liking
-- [ ] Read the README.md till the end and adjust the content licensing,
-      logos, etc (I know you stopped at tbd...)
-- [ ] Adjust the file [.github/CODEOWNERS](./.github/CODEOWNERS)
-- [ ] Adjust the files under [.github/ISSUE_TEMPLATE](./.github/ISSUE_TEMPLATE)
-- [ ] If you use staging and main branches use this template for [.github/renovate.json](./.github/renovate.json)
-
-
-
-- [ ] Do you want to honor all kinds of contributions? Use [all-contributors](https://allcontributors.org/)
-
-```bash
-npx all-contributors-cli check
-npx all-contributors-cli add ff6347 doc
-```
-
-You can use it on GitHub just by commenting on PRs and issues:
-
-```plain
-@all-contributors please add @ff6347 for infrastructure, tests and code
-```
-
-- [ ] Add your project description
-- [ ] Get fancy shields at https://shields.io
-
-## Prerequisites
-
-tbd...
+This prototype assists people to find out which documents they need for their registration at a Bürgeramt in Berlin.
 
 ## Installation
 
-tbd...
+Make sure to use Node.js version 20.6.1 or higher.
 
-## Usage or Deployment
-
-tbd...
+```bash
+npm install
+```
 
 ## Development
 
-tbd...
+```bash
+npm run dev
+```
 
 ## Tests
 
-tbd...
+```bash
+npm run test
+```
 
 ## Contributing
 
@@ -68,6 +43,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
   <tbody>
     <tr>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/raphael-arce"><img src="https://avatars.githubusercontent.com/u/8709861?v=4?s=64" width="64px;" alt="Raphael.A"/><br /><sub><b>Raphael.A</b></sub></a><br /><a href="https://github.com/technologiestiftung/template-default/commits?author=raphael-arce" title="Documentation">📖</a> <a href="https://github.com/technologiestiftung/template-default/commits?author=raphael-arce" title="Code">💻</a> <a href="#design-raphael-arce" title="Design">🎨</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/myri4de"><img src="https://avatars.githubusercontent.com/u/124904583?v=4?s=64" width="64px;" alt="Myrian Rigal"/><br /><sub><b>Myrian Rigal</b></sub></a><br /><a href="#content-myri4de" title="Content">🖋</a> <a href="#projectManagement-myri4de" title="Project Management">📆</a> <a href="#ideas-myri4de" title="Ideas, Planning, & Feedback">🤔</a></td>
     </tr>
   </tbody>
 </table>
@@ -82,8 +58,6 @@ This project follows the [all-contributors](https://github.com/all-contributors/
 ## Content Licensing
 
 Texts and content available as [CC BY](https://creativecommons.org/licenses/by/3.0/de/).
-
-Illustrations by {MARIA_MUSTERFRAU}, all rights reserved.
 
 ## Credits
 
@@ -112,8 +86,3 @@ Illustrations by {MARIA_MUSTERFRAU}, all rights reserved.
     </td>
   </tr>
 </table>
-
-## Related Projects
-
-<!-- touch -->
-

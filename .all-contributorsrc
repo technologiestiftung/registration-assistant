@@ -20,6 +20,17 @@
         "code",
         "design"
       ]
+    },
+    {
+      "login": "myri4de",
+      "name": "Myrian Rigal",
+      "avatar_url": "https://avatars.githubusercontent.com/u/124904583?v=4",
+      "profile": "https://github.com/myri4de",
+      "contributions": [
+        "content",
+        "projectManagement",
+        "ideas"
+      ]
     }
   ],
   "contributorsPerLine": 7,
