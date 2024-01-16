@@ -1,9 +1,14 @@
+import { dislike, like } from "./matomo.ts";
+
 export function Feedback() {
   return (
-    <div className="flex w-[22rem] flex-col pt-10">
+    <div className="flex w-[22rem] flex-col pt-10 text-base">
       <h2>Feedback zu dem Anmelde-Assistenten</h2>
       <div className="flex justify-between py-3">
-        <button className="flex gap-2 bg-green-200 px-5 py-2 text-green-800 hover:bg-green-300">
+        <button
+          onClick={() => like()}
+          className="flex gap-2 bg-green-200 px-5 py-2 text-green-800 hover:bg-green-300"
+        >
           <span>Gefällt mir!</span>
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -21,7 +26,10 @@ export function Feedback() {
           </svg>
         </button>
 
-        <button className="flex gap-2 bg-red-200 px-5 py-2 text-red-800 hover:bg-red-300">
+        <button
+          onClick={() => dislike()}
+          className="flex gap-2 bg-red-200 px-5 py-2 text-red-800 hover:bg-red-300"
+        >
           <span>Könnte besser sein</span>
           <svg
             xmlns="http://www.w3.org/2000/svg"
