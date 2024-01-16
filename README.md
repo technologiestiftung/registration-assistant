@@ -8,6 +8,10 @@
 
 This prototype assists people to find out which documents they need for their registration at a Bürgeramt in Berlin.
 
+The prototype is available as a webapp here: https://buergeramt-goes-digital.vercel.app/.
+After answering a few questions, you'll be given a check-list with all the documents you'll need bring (and fill out)
+to register at a Bürgeramt in Berlin. 
+
 ## Installation
 
 Make sure to use Node.js version 20.6.1 or higher.
