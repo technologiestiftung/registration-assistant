@@ -33,7 +33,7 @@ export function IsFirstRegistration() {
       }}
     >
       <div className="flex flex-col gap-4">
-        <h3 className="flex w-full  justify-between gap-3">
+        <h3 className="flex w-full justify-between gap-3">
           {t("first-registration.q1", language)}
           <div
             className="tooltip tooltip-left text-start sm:tooltip-top"

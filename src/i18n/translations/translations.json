@@ -1,7 +1,15 @@
 {
   "de-DE": {
-    "de-DE": "Deutsch",
-    "en-DE": "English",
+    "de-DE.mobile": "DE",
+    "de-DE.desktop": "Deutsch",
+
+    "en-DE.mobile": "EN",
+    "en-DE.desktop": "English",
+
+    "start.mobile": "Start",
+    "start.desktop": "Startseite",
+
+    "title": "Dein Anmelde-Assistent",
 
     "yes": "Ja",
     "no": "Nein",
@@ -20,8 +28,7 @@
     "button.next": "Weiter",
     "button.next.tooltip": "Bitte beantworte die Frage zuerst.",
 
-    "intro.title": "Willkommen beim Anmelde-Assistent!",
-    "intro.p1": "Diese Anwendung ist ein Prototyp vom CityLAB Berlin. Sie hilft Dir dabei, Dich gut auf Deinen Termin zur Anmeldung vorzubereiten. Klicke \"Weiter\" und beantworte ein paar Fragen. Wir benötigen diese Informationen, um eine Liste mit Dokumenten zu erstellen, die Du für den Termin mitbringen musst. Hake dann nacheinander die Dokumente auf der Liste ab, um den Überblick zu behalten. Los geht's!",
+    "intro.p1": "Diese Anwendung ist ein Prototyp vom CityLAB Berlin und wird aktuell für einen Test verwendet. Sie soll Dir dabei helfen, Dich gut auf Deinen Termin zur Anmeldung vorzubereiten. Beantworte uns ein paar Fragen und wir erstellen Dir eine Übersicht mit Dokumenten, die Du für den Termin mitbringen musst. Los geht's!",
     "intro.p2": "Du hast noch keinen Termin?",
     "intro.p2.link": "Termin buchen.",
 
@@ -100,8 +107,16 @@
     "supplement.tooltip": "Dieses Dokument ist notwendig, weil Du weiterhin in einer weiteren Wohnung gemeldet bleiben möchtest."
   },
   "en-DE": {
-    "de-DE": "Deutsch",
-    "en-DE": "English",
+    "de-DE.mobile": "DE",
+    "de-DE.desktop": "Deutsch",
+
+    "en-DE.mobile": "EN",
+    "en-DE.desktop": "English",
+
+    "start.mobile": "Home",
+    "start.desktop": "Home",
+
+    "title": "Your Registration Assistant",
 
     "yes": "Yes",
     "no": "No",
@@ -120,8 +135,7 @@
     "button.next": "Next",
     "button.next.tooltip": "Please answer the question first.",
 
-    "intro.title": "Welcome to the registration assistant!",
-    "intro.p1": "This application is a prototype from CityLAB Berlin. It helps you prepare for your registration appointment. Click \"Next\" and answer a few questions. We will use this information to create a customised list of documents that you need for your registration appointment. On the last screen, check off the documents on the list one by one to keep track. Let's get started!",
+    "intro.p1": "This application is a prototype from CityLAB Berlin and is currently being used for a test. It should help you to prepare well for your application appointment. Answer a few questions and we will provide you with an overview of the documents you need to bring with you to the appointment. Let's go!",
     "intro.p2": "Don't have an appointment yet?",
     "intro.p2.link": " Book an appointment.",
 
