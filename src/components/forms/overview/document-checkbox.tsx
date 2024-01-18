@@ -2,6 +2,7 @@ import { DocumentLink } from "./document-link.tsx";
 import { useOverviewStore } from "./store";
 import { t } from "../../../i18n/translations";
 import { useI18nStore } from "../../../i18n/store";
+import { InfoButton } from "../../buttons/info-button";
 
 export function DocumentCheckbox({
   id,
@@ -62,12 +63,7 @@ export function DocumentCheckbox({
           className="tooltip tooltip-left text-start sm:tooltip-top print:hidden"
           data-tip={t(`${id}.tooltip`, language)}
         >
-          <button
-            type="button"
-            className="rounded-full border-2 border-black px-2.5 font-bold hover:border-berlin-red hover:bg-berlin-red hover:text-white"
-          >
-            i
-          </button>
+          <InfoButton />
         </div>
       </label>
       <DocumentLink id={id} />
