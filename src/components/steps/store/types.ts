@@ -35,6 +35,7 @@ const ProgressStoreSchema = ProgressSchema.extend({
   goTo: z.function().args(StepsSchema.keyof()),
   goToNextStep: z.function(),
   goToPreviousStep: z.function(),
+  goToStart: z.function(),
 });
 
 export type ProgressStore = z.infer<typeof ProgressStoreSchema>;

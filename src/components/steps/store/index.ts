@@ -101,4 +101,8 @@ export const useProgressStore = create<ProgressStore>((set, get) => ({
         return;
     }
   },
+
+  goToStart() {
+    get().setCurrentStep(0);
+  },
 }));
