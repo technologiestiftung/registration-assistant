@@ -47,7 +47,11 @@ export function Steps() {
   ];
 
   return (
-    <div className="flex w-[22rem] flex-col items-end gap-4 print:w-full">
+    <div
+      className={`flex h-full w-[22rem] flex-col items-end gap-4 print:w-full lg:text-lg ${
+        currentStep < 16 && "pt-12"
+      }`}
+    >
       {steps[currentStep]}
     </div>
   );

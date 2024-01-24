@@ -27,7 +27,7 @@ export function Appointment() {
           <b>{t("your-appointment", language)}:</b>
           <br />
           {dateTimeFormat.format(appointment!)}
-          <div className="py-1" />
+          <br className="py-1" />
           <b>{t("address", language)}</b>:
           <br />
           Schlesische Straße 27A, 10997 Berlin (
