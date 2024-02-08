@@ -5,6 +5,7 @@ import { HomeButton } from "./components/buttons/home-button";
 import { HeaderTitle } from "./components/header-title";
 import { useProgressStore } from "./components/steps/store";
 import { useI18nStore } from "../src/i18n/store";
+import { availableLanguages } from "../src/i18n/store/types.ts";
 
 function App() {
   const currentStep = useProgressStore((state) => state.currentStep);
@@ -33,7 +34,7 @@ function App() {
         <Steps />
       </main>
 
-      {language === "de-DE" && (
+      {language === availableLanguages[0] && (
         <div className="flex w-full flex-wrap justify-center gap-x-2 px-8 py-4 text-sm">
           Wie gefällt Dir die Anwendung?
           <a
