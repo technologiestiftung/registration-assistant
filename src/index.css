@@ -43,6 +43,6 @@ progress[value]::-webkit-progress-value {
 
 @media print {
   canvas {
-    display: none !important;
+    display: none;
   }
 }
