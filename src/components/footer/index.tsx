@@ -51,11 +51,11 @@ export function Footer() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            {t("dataProtection", language)}
+            {t("dataPrivacy", language)}
           </a>
           <a
             className="flex flex-col gap-4 text-gray-400 underline"
-            href="https://www.technologiestiftung-berlin.de/impressum"
+            href={t("imprint.link", language)}
             target="_blank"
             rel="noopener noreferrer"
           >

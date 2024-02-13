@@ -114,8 +114,9 @@
     "logo.t2": "Ein Projekt der",
     "logo.t3": "Mit Unterstützung von",
 
-    "dataProtection": "Datenschutz",
-    "imprint": "Impressum"
+    "dataPrivacy": "Datenschutz",
+    "imprint": "Impressum",
+    "imprint.link": "https://www.technologiestiftung-berlin.de/impressum"
   },
   "en-DE": {
     "de-DE.mobile": "DE",
@@ -232,7 +233,8 @@
     "logo.t2": "A project by",
     "logo.t3": "Supported by",
 
-    "dataProtection": "Data protection",
-    "imprint": "Imprint"
+    "dataPrivacy": "Data Privacy",
+    "imprint": "Imprint",
+    "imprint.link": "https://www.technologiestiftung-berlin.de/en/imprint"
   }
 }
