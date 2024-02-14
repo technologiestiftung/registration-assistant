@@ -59,7 +59,7 @@ export function IsRegisteringForMoreThanThreeMonths() {
             return (
               <RadioInput
                 key={option}
-                name={name}
+                name={`${name}.${option}`}
                 label={label}
                 isChecked={isChecked}
                 onChange={onChange}
