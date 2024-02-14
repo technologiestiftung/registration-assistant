@@ -6,6 +6,7 @@ import { useI18nStore } from "../../../i18n/store";
 import { InfoButton } from "../../buttons/info-button";
 import { PrimaryButton } from "../../buttons/primary-button";
 import { SecondaryButton } from "../../buttons/secondary-button";
+import { useTimeout } from "../../../hooks/useTimeout.tsx";
 
 export function HasChild() {
   const hasKids = useFirstRegistrationStore((state) => state.hasChild);
@@ -19,6 +20,10 @@ export function HasChild() {
   const language = useI18nStore((state) => state.language);
 
   const options = ["yes", "no"];
+
+  const { isOver } = useTimeout();
+
+  const arePointerEventsDisabled = !isOver;
 
   return (
     <form
@@ -65,7 +70,7 @@ export function HasChild() {
         <div
           className={`${
             !isValid
-              ? "tooltip tooltip-left text-start sm:tooltip-top"
+              ? `tooltip tooltip-left text-start sm:tooltip-top ${arePointerEventsDisabled ? "pointer-events-none" : ""}`
               : undefined
           }`}
           data-tip={!isValid ? t("button.next.tooltip", language) : undefined}

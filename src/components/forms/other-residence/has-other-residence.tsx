@@ -6,6 +6,7 @@ import { RadioInput } from "../../radio-input";
 import { InfoButton } from "../../buttons/info-button";
 import { PrimaryButton } from "../../buttons/primary-button";
 import { SecondaryButton } from "../../buttons/secondary-button";
+import { useTimeout } from "../../../hooks/useTimeout.tsx";
 
 export function HasOtherResidence() {
   const hasOtherResidence = useOtherResidenceStore(
@@ -23,6 +24,10 @@ export function HasOtherResidence() {
   const language = useI18nStore((state) => state.language);
 
   const options = ["yes", "no"];
+
+  const { isOver } = useTimeout();
+
+  const arePointerEventsDisabled = !isOver;
 
   return (
     <form
@@ -66,11 +71,11 @@ export function HasOtherResidence() {
 
       <div className="flex h-full w-full flex-row-reverse items-end justify-between pt-10">
         <div
-          className={
+          className={`${
             !isValid
-              ? "tooltip tooltip-left text-start sm:tooltip-top"
+              ? `tooltip tooltip-left text-start sm:tooltip-top ${arePointerEventsDisabled ? "pointer-events-none" : ""}`
               : undefined
-          }
+          }`}
           data-tip={!isValid ? t("button.next.tooltip", language) : undefined}
         >
           <PrimaryButton

@@ -6,6 +6,7 @@ import { RadioInput } from "../../radio-input";
 import { InfoButton } from "../../buttons/info-button";
 import { PrimaryButton } from "../../buttons/primary-button";
 import { SecondaryButton } from "../../buttons/secondary-button";
+import { useTimeout } from "../../../hooks/useTimeout.tsx";
 
 export function IsMarried() {
   const isMarried = useFirstRegistrationStore((state) => state.isMarried);
@@ -19,6 +20,10 @@ export function IsMarried() {
   const options = ["yes", "no"];
 
   const isValid = isMarried !== null;
+
+  const { isOver } = useTimeout();
+
+  const arePointerEventsDisabled = !isOver;
 
   return (
     <form
@@ -64,7 +69,7 @@ export function IsMarried() {
         <div
           className={`${
             !isValid
-              ? "tooltip tooltip-left text-start sm:tooltip-top"
+              ? `tooltip tooltip-left text-start sm:tooltip-top ${arePointerEventsDisabled ? "pointer-events-none" : ""}`
               : undefined
           }`}
           data-tip={!isValid ? t("button.next.tooltip", language) : undefined}
