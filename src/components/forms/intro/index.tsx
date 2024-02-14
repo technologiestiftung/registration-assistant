@@ -15,18 +15,14 @@ export function Intro() {
           e.preventDefault();
           goToNextStep();
         }}
-        className="flex h-full flex-col justify-end gap-10"
+        className="flex w-full flex-col gap-9 lg:h-96"
       >
         <div className="flex flex-col gap-4">
-          <h1 className="text-xl font-semibold">
-            {t("intro.title", language)}
-          </h1>
-
           <p>{t("intro.p1", language)}</p>
 
           <Appointment />
         </div>
-        <div className="flex h-full w-full items-end justify-end">
+        <div className="flex w-full justify-end">
           <PrimaryButton label={t("button.next", language)} type="submit" />
         </div>
       </form>

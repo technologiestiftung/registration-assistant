@@ -33,7 +33,7 @@ export function IsRegisteringForMoreThanSixMonths() {
 
   return (
     <form
-      className="flex h-full w-full flex-col gap-5"
+      className="flex h-80 w-full flex-col gap-12 lg:h-96"
       onSubmit={(e) => {
         e.preventDefault();
         goToNextStep();
@@ -84,7 +84,7 @@ export function IsRegisteringForMoreThanSixMonths() {
         </a>
       </p>
 
-      <div className="flex h-full w-full flex-row-reverse items-end justify-between pt-10">
+      <div className="flex w-full flex-row-reverse items-end justify-between">
         <div
           className={`${
             !isValid
