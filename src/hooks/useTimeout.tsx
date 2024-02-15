@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-export function useTimeout(ms: number = 500) {
+export function useTimeout(ms: number = 10) {
   const [isOver, setIsOver] = useState<boolean>(false);
 
   useEffect(() => {
