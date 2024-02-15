@@ -34,7 +34,7 @@ export function Appointment() {
           <a
             href="https://www.google.de/maps/place/Schlesische+Str.+27A,+10997+Berlin/@52.4984664,13.4448928,17z/data=!3m1!4b1!4m6!3m5!1s0x47a84e53becc02e7:0x39bee44340592b1!8m2!3d52.4984664!4d13.4474677!16s%2Fg%2F11b_242msd?entry=ttu"
             target="_blank"
-            className="text-blue-500 underline visited:text-purple-500"
+            className="text-blue-700 underline visited:text-purple-500"
           >
             {t("plan-route", language)}
           </a>
@@ -46,7 +46,7 @@ export function Appointment() {
           <a
             href="https://service.berlin.de/dienstleistung/120686/"
             target="_blank"
-            className="text-blue-500 underline visited:text-purple-500"
+            className="text-blue-700 underline visited:text-purple-500"
           >
             {t("intro.p2.link", language)}
           </a>

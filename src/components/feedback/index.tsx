@@ -11,7 +11,7 @@ export function Feedback() {
         <div className="flex w-full flex-wrap justify-center gap-x-2 px-8 py-4 text-sm">
           {t("feedback.question", language)}
           <a
-            className="text-blue-500 underline"
+            className="text-blue-700 underline"
             href={t("feedback.link", language)}
             target="_blank"
             rel="noopener noreferrer"
