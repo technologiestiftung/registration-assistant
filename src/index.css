@@ -16,6 +16,7 @@
   src: url("/fonts/BerlinTypeWeb-Bold.woff2");
 }
 
+/* Required for consistent progress bar rendering across chrome, firefox and safari */
 progress[value] {
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -41,8 +42,14 @@ progress[value]::-webkit-progress-value {
   background: var(--color);
 }
 
+/* Hide the confetti in print view */
 @media print {
   canvas {
     display: none;
   }
+}
+
+/* Workaround for safari bug: "text-align: center" is not applied in select */
+select {
+  text-align-last: center;
 }

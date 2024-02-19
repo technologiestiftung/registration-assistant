@@ -7,14 +7,14 @@ export function LanguageSelect() {
   const setLanguage = useI18nStore((state) => state.setLanguage);
 
   return (
-    <div className="pointer-hand group flex cursor-pointer items-center gap-1 border-2 border-black bg-white pl-3 pr-2 hover:bg-gray-100">
+    <div className="grid">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         fill="none"
         viewBox="0 0 24 24"
         strokeWidth={1.5}
         stroke="currentColor"
-        className="h-6 w-6"
+        className="pointer-events-none relative left-3 z-10 col-start-1 row-start-1 h-5 w-5 self-center justify-self-start forced-colors:hidden"
       >
         <path
           strokeLinecap="round"
@@ -23,10 +23,22 @@ export function LanguageSelect() {
         />
       </svg>
 
+      <svg
+        className="pointer-events-none relative right-2 z-10 col-start-1 row-start-1 h-4 w-4 self-center justify-self-end forced-colors:hidden"
+        viewBox="0 0 16 16"
+        fill="currentColor"
+        aria-hidden="true"
+      >
+        <path
+          fillRule="evenodd"
+          d="M4.22 6.22a.75.75 0 0 1 1.06 0L8 8.94l2.72-2.72a.75.75 0 1 1 1.06 1.06l-3.25 3.25a.75.75 0 0 1-1.06 0L4.22 7.28a.75.75 0 0 1 0-1.06Z"
+          clipRule="evenodd"
+        ></path>
+      </svg>
+
       {/* DESKTOP */}
       <select
-        className="hidden rounded-none bg-white py-3 text-lg group-hover:bg-gray-100 lg:block"
-        id="language-select"
+        className="col-start-1 row-start-1 hidden w-32 cursor-pointer appearance-none rounded-none border-2 border-black bg-white py-2.5 pl-4 pr-2 text-center text-lg hover:bg-gray-100 lg:block"
         aria-label={t("language-select", language)}
         onChange={(e) => setLanguage(e.target.value)}
       >
@@ -39,8 +51,7 @@ export function LanguageSelect() {
 
       {/* MOBILE */}
       <select
-        className="block rounded-none bg-white py-2.5 text-base group-hover:bg-gray-100 lg:hidden"
-        id="language-select"
+        className="col-start-1 row-start-1 block w-[5.5rem] cursor-pointer appearance-none rounded-none border-2 border-black bg-white py-2.5 pl-4 pr-2 text-center hover:bg-gray-100 lg:hidden"
         aria-label={t("language-select", language)}
         onChange={(e) => setLanguage(e.target.value)}
       >
