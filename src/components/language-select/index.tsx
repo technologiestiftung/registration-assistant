@@ -14,7 +14,7 @@ export function LanguageSelect() {
         viewBox="0 0 24 24"
         strokeWidth={1.5}
         stroke="currentColor"
-        className="pointer-events-none relative left-3 z-10 col-start-1 row-start-1 h-5 w-5 self-center justify-self-start forced-colors:hidden"
+        className="forced-colors:hidden pointer-events-none relative left-3 z-10 col-start-1 row-start-1 h-5 w-5 self-center justify-self-start"
       >
         <path
           strokeLinecap="round"
@@ -24,7 +24,7 @@ export function LanguageSelect() {
       </svg>
 
       <svg
-        className="pointer-events-none relative right-2 z-10 col-start-1 row-start-1 h-4 w-4 self-center justify-self-end forced-colors:hidden"
+        className="forced-colors:hidden pointer-events-none relative right-2 z-10 col-start-1 row-start-1 h-4 w-4 self-center justify-self-end"
         viewBox="0 0 16 16"
         fill="currentColor"
         aria-hidden="true"
@@ -41,6 +41,7 @@ export function LanguageSelect() {
         className="col-start-1 row-start-1 hidden w-32 cursor-pointer appearance-none rounded-none border-2 border-black bg-white py-2.5 pl-4 pr-2 text-center text-lg hover:bg-gray-100 lg:block"
         aria-label={t("language-select", language)}
         onChange={(e) => setLanguage(e.target.value)}
+        defaultValue={language}
       >
         {availableLanguages.map((availableLanguage) => (
           <option key={availableLanguage} value={availableLanguage}>
@@ -54,6 +55,7 @@ export function LanguageSelect() {
         className="col-start-1 row-start-1 block w-[5.5rem] cursor-pointer appearance-none rounded-none border-2 border-black bg-white py-2.5 pl-4 pr-2 text-center hover:bg-gray-100 lg:hidden"
         aria-label={t("language-select", language)}
         onChange={(e) => setLanguage(e.target.value)}
+        defaultValue={language}
       >
         {availableLanguages.map((availableLanguage) => (
           <option key={availableLanguage} value={availableLanguage}>
