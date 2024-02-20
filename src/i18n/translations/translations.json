@@ -9,7 +9,7 @@
     "start.mobile": "Start",
     "start.desktop": "Startseite",
 
-    "title": "Dein Anmelde-Assistent",
+    "title": "Dein Anmelde-Check",
 
     "yes": "Ja",
     "no": "Nein",
@@ -128,7 +128,7 @@
     "start.mobile": "Home",
     "start.desktop": "Home",
 
-    "title": "Your Registration Assistant",
+    "title": "Your RegiCheck",
 
     "yes": "Yes",
     "no": "No",
@@ -147,7 +147,7 @@
     "button.next": "Next",
     "button.next.tooltip": "Please answer the question first.",
 
-    "intro.p1": "This application is a prototype from CityLAB Berlin and is currently being used for a test. It should help you to prepare well for your application appointment. Answer a few questions and we will provide you with an overview of the documents you need to bring with you to the appointment. Let's go!",
+    "intro.p1": "This application is a prototype from CityLAB Berlin and is currently being used for a test. It should help you to prepare well for your registration appointment. Answer a few questions and we will provide you with an overview of the documents you need to bring with you to the appointment. Let's go!",
     "intro.p2": "Don't have an appointment yet?",
     "intro.p2.link": " Book an appointment.",
 

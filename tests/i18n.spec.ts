@@ -6,7 +6,7 @@ test("should translate page to english", async ({ page }) => {
   await page.getByRole("combobox").selectOption("English");
 
   const englishHeading = page.getByRole("heading", {
-    name: "Your Registration Assistant",
+    name: "Your RegiCheck",
   });
 
   await expect(englishHeading).toBeVisible();
