@@ -44,8 +44,8 @@ export function Overview() {
           }}
           className="flex items-center gap-1 border-2 border-blue-950 bg-blue-950 text-white hover:border-blue-900 hover:bg-blue-900 print:hidden"
         >
-          <span className="py-2 pl-4">{t("print", language)}</span>
-          <div className="py-2 pl-3 pr-4">
+          <span className="py-2 ltr:pl-4 rtl:pr-4">{t("print", language)}</span>
+          <div className="py-2 ltr:pl-3 ltr:pr-4 rtl:pl-4 rtl:pr-3">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"

@@ -1,11 +1,16 @@
 import { z } from "zod";
 
-export const availableLanguages: readonly [string, ...string[]] = [
-  "de-DE",
-  "en-DE",
-];
+export enum availableLanguagesEnum {
+  "ar" = "ar",
+  "de" = "de",
+  "en" = "en",
+  "es" = "es",
+  "fr" = "fr",
+  "tr" = "tr",
+  "ru" = "ru",
+}
 
-const availableLanguagesSchema = z.enum(availableLanguages);
+export const availableLanguagesSchema = z.nativeEnum(availableLanguagesEnum);
 
 export type AvailableLanguages = z.infer<typeof availableLanguagesSchema>;
 

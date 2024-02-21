@@ -39,7 +39,7 @@ export function IsGermanUnder16() {
         <h3 className="flex w-full items-baseline justify-between gap-3">
           {t("nationality.q2", language)}
           <div
-            className="tooltip tooltip-left text-start sm:tooltip-top"
+            className="tooltip text-start sm:tooltip-top ltr:tooltip-left rtl:tooltip-right"
             data-tip={t("nationality.q2.tooltip", language)}
           >
             <InfoButton />
@@ -71,7 +71,7 @@ export function IsGermanUnder16() {
         <div
           className={`${
             !isValid
-              ? `tooltip tooltip-left text-start sm:tooltip-top ${arePointerEventsDisabled ? "pointer-events-none" : ""}`
+              ? `tooltip text-start sm:tooltip-top ltr:tooltip-left rtl:tooltip-right ${arePointerEventsDisabled ? "pointer-events-none" : ""}`
               : undefined
           }`}
           data-tip={!isValid ? t("button.next.tooltip", language) : undefined}
