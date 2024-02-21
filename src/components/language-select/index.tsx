@@ -41,6 +41,7 @@ export function LanguageSelect() {
         className="col-start-1 row-start-1 hidden w-32 cursor-pointer appearance-none rounded-none border-2 border-black bg-white py-2.5 pl-4 pr-2 text-center text-lg hover:bg-gray-100 lg:block"
         aria-label={t("language-select", language)}
         onChange={(e) => setLanguage(e.target.value)}
+        value={language}
       >
         {availableLanguages.map((availableLanguage) => (
           <option key={availableLanguage} value={availableLanguage}>
@@ -54,6 +55,7 @@ export function LanguageSelect() {
         className="col-start-1 row-start-1 block w-[5.5rem] cursor-pointer appearance-none rounded-none border-2 border-black bg-white py-2.5 pl-4 pr-2 text-center hover:bg-gray-100 lg:hidden"
         aria-label={t("language-select", language)}
         onChange={(e) => setLanguage(e.target.value)}
+        value={language}
       >
         {availableLanguages.map((availableLanguage) => (
           <option key={availableLanguage} value={availableLanguage}>
