@@ -14,7 +14,7 @@ export function LanguageSelect() {
         viewBox="0 0 24 24"
         strokeWidth={1.5}
         stroke="currentColor"
-        className="forced-colors:hidden pointer-events-none relative left-3 z-10 col-start-1 row-start-1 h-5 w-5 self-center justify-self-start"
+        className="pointer-events-none relative left-3 z-10 col-start-1 row-start-1 h-5 w-5 self-center justify-self-start forced-colors:hidden"
       >
         <path
           strokeLinecap="round"
@@ -24,7 +24,7 @@ export function LanguageSelect() {
       </svg>
 
       <svg
-        className="forced-colors:hidden pointer-events-none relative right-2 z-10 col-start-1 row-start-1 h-4 w-4 self-center justify-self-end"
+        className="pointer-events-none relative right-2 z-10 col-start-1 row-start-1 h-4 w-4 self-center justify-self-end forced-colors:hidden"
         viewBox="0 0 16 16"
         fill="currentColor"
         aria-hidden="true"
