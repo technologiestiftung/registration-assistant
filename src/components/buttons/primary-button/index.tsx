@@ -18,15 +18,15 @@ export function PrimaryButton({
       type={type}
       disabled={disabled}
     >
-      <span className="py-2 pl-4">{label}</span>
-      <div className="flex py-2 pl-3 pr-4">
+      <span className="py-2 ltr:pl-4 rtl:pr-4">{label}</span>
+      <div className="flex py-2 ltr:pl-3 ltr:pr-4 rtl:pl-4 rtl:pr-3">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           height="16"
           width="14"
           viewBox="0 0 448 512"
           strokeWidth={1.5}
-          className="scale-125 transform"
+          className="scale-125 transform ltr:rotate-0 rtl:rotate-180"
           fill="currentColor"
         >
           <div

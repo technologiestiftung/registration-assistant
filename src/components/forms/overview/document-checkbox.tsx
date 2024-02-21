@@ -60,7 +60,7 @@ export function DocumentCheckbox({
         </div>
 
         <div
-          className="tooltip tooltip-left text-start sm:tooltip-top print:hidden"
+          className="tooltip text-start sm:tooltip-top ltr:tooltip-left rtl:tooltip-right print:hidden"
           data-tip={t(`${id}.tooltip`, language)}
         >
           <InfoButton />

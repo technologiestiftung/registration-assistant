@@ -1,10 +1,15 @@
 import { useI18nStore } from "../../i18n/store";
 import { t } from "../../i18n/translations";
-import { availableLanguages } from "../../i18n/store/types.ts";
+import {
+  availableLanguagesEnum,
+  availableLanguagesSchema,
+} from "../../i18n/store/types.ts";
 
 export function LanguageSelect() {
   const language = useI18nStore((state) => state.language);
   const setLanguage = useI18nStore((state) => state.setLanguage);
+
+  const availableLanguages = Object.values(availableLanguagesEnum);
 
   return (
     <div className="grid">
@@ -14,7 +19,7 @@ export function LanguageSelect() {
         viewBox="0 0 24 24"
         strokeWidth={1.5}
         stroke="currentColor"
-        className="pointer-events-none relative left-3 z-10 col-start-1 row-start-1 h-5 w-5 self-center justify-self-start forced-colors:hidden"
+        className="pointer-events-none relative z-10 col-start-1 row-start-1 h-5 w-5 self-center justify-self-start lg:hidden ltr:left-3 rtl:right-3 forced-colors:hidden"
       >
         <path
           strokeLinecap="round"
@@ -24,7 +29,7 @@ export function LanguageSelect() {
       </svg>
 
       <svg
-        className="pointer-events-none relative right-2 z-10 col-start-1 row-start-1 h-4 w-4 self-center justify-self-end forced-colors:hidden"
+        className="pointer-events-none relative z-10 col-start-1 row-start-1 h-4 w-4 self-center justify-self-end ltr:right-2 rtl:left-2 forced-colors:hidden"
         viewBox="0 0 16 16"
         fill="currentColor"
         aria-hidden="true"
@@ -38,9 +43,12 @@ export function LanguageSelect() {
 
       {/* DESKTOP */}
       <select
-        className="col-start-1 row-start-1 hidden w-32 cursor-pointer appearance-none rounded-none border-2 border-black bg-white py-2.5 pl-4 pr-2 text-center text-lg hover:bg-gray-100 lg:block"
+        className="col-start-1 row-start-1 hidden w-36 cursor-pointer appearance-none rounded-none border-2 border-black bg-white py-2.5 text-center text-lg hover:bg-gray-100 lg:block ltr:pl-0 ltr:pr-2 rtl:pl-2 rtl:pr-0"
+        dir="ltr"
         aria-label={t("language-select", language)}
-        onChange={(e) => setLanguage(e.target.value)}
+        onChange={(e) =>
+          setLanguage(availableLanguagesSchema.parse(e.target.value))
+        }
         value={language}
       >
         {availableLanguages.map((availableLanguage) => (
@@ -52,9 +60,12 @@ export function LanguageSelect() {
 
       {/* MOBILE */}
       <select
-        className="col-start-1 row-start-1 block w-[5.5rem] cursor-pointer appearance-none rounded-none border-2 border-black bg-white py-2.5 pl-4 pr-2 text-center hover:bg-gray-100 lg:hidden"
+        className="col-start-1 row-start-1 block w-[5.5rem] cursor-pointer appearance-none rounded-none border-2 border-black bg-white py-2.5 text-center hover:bg-gray-100 lg:hidden ltr:pl-4 ltr:pr-2 rtl:pl-2 rtl:pr-4"
+        dir="ltr"
         aria-label={t("language-select", language)}
-        onChange={(e) => setLanguage(e.target.value)}
+        onChange={(e) =>
+          setLanguage(availableLanguagesSchema.parse(e.target.value))
+        }
         value={language}
       >
         {availableLanguages.map((availableLanguage) => (

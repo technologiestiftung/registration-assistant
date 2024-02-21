@@ -41,7 +41,7 @@ export function IsRegisteringMoreThanTwo() {
         <h3 className="flex w-full items-baseline justify-between gap-3">
           {t("first-registration.q6", language)}
           <div
-            className="tooltip tooltip-left text-start sm:tooltip-top"
+            className="tooltip text-start sm:tooltip-top ltr:tooltip-left rtl:tooltip-right"
             data-tip={t("first-registration.q6.tooltip", language)}
           >
             <InfoButton />
@@ -74,7 +74,7 @@ export function IsRegisteringMoreThanTwo() {
         <div
           className={`${
             !isValid
-              ? `tooltip tooltip-left text-start sm:tooltip-top ${arePointerEventsDisabled ? "pointer-events-none" : ""}`
+              ? `tooltip text-start sm:tooltip-top ltr:tooltip-left rtl:tooltip-right ${arePointerEventsDisabled ? "pointer-events-none" : ""}`
               : undefined
           }`}
           data-tip={!isValid ? t("button.next.tooltip", language) : undefined}

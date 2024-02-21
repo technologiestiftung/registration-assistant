@@ -41,7 +41,7 @@ export function IsFirstRegistration() {
         <h3 className="flex w-full justify-between gap-3">
           {t("first-registration.q1", language)}
           <div
-            className="tooltip tooltip-left text-start sm:tooltip-top"
+            className="tooltip text-start sm:tooltip-top ltr:tooltip-left rtl:tooltip-right"
             data-tip={t("first-registration.q1.tooltip", language)}
           >
             <InfoButton />
@@ -73,7 +73,7 @@ export function IsFirstRegistration() {
         <div
           className={`${
             !isValid
-              ? `tooltip tooltip-left text-start sm:tooltip-top ${arePointerEventsDisabled ? "pointer-events-none" : ""}`
+              ? `tooltip text-start sm:tooltip-top ltr:tooltip-left rtl:tooltip-right ${arePointerEventsDisabled ? "pointer-events-none" : ""}`
               : undefined
           }`}
           data-tip={!isValid ? t("button.next.tooltip", language) : undefined}
