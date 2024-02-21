@@ -4,17 +4,17 @@
 [![All Contributors](https://img.shields.io/badge/all_contributors-3-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
-# Registration Assistant
+# Anmelde-Check
 
 This prototype assists people to find out which documents they need for their registration at a Bürgeramt in Berlin.
 
-The prototype is available as a webapp here: https://buergeramt-goes-digital.vercel.app/.
+The prototype is available as a webapp here: https://anmelde-check.vercel.app/.
 After answering a few questions, you'll be given a check-list with all the documents you'll need bring (and fill out)
 to register at a Bürgeramt in Berlin. 
 
 ## Installation
 
-Make sure to use Node.js version 20.6.1 or higher.
+Make sure to use Node.js version 20.11.0 or higher.
 
 ```bash
 npm install
