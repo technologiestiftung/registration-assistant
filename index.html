@@ -4,27 +4,44 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="" />
 
-    <link rel="preload" as="font" href="/fonts/BerlinTypeWeb-Bold.woff2" crossorigin="anonymous"/>
-    <link rel="preload" as="font" href="/fonts/BerlinTypeWeb-Regular.woff2" crossorigin="anonymous"/>
+    <link
+      rel="preload"
+      as="font"
+      href="/fonts/BerlinTypeWeb-Bold.woff2"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="preload"
+      as="font"
+      href="/fonts/BerlinTypeWeb-Regular.woff2"
+      crossorigin="anonymous"
+    />
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name=description content="Diese Webseite ist ein Assistent für die Anmeldung oder Ummeldung in Berlin" />
+    <meta
+      name="description"
+      content="Diese Webseite ist ein Assistent für die Anmeldung oder Ummeldung in Berlin"
+    />
     <title>Anmelde-Check</title>
   </head>
   <body>
-    <div class="flex min-h-screen w-screen">
-      <div class="hidden w-2/5 md:flex">
-        <div class="flex h-full w-full items-center justify-center">
+    <div class="flex w-screen">
+      <div
+        class="sticky left-0 top-0 hidden h-screen w-2/5 bg-blue-950 md:flex"
+      >
+        <div class="flex w-full items-center justify-center">
           <img
-              src="/images/fernsehturm.jpg"
-              class="h-full object-cover saturate-150"
-              alt="Bild des Berliner Fernsehturms"
-              loading="lazy"
+            src="/images/fernsehturm_alpha_paperplane.png"
+            class="h-screen object-cover"
+            alt="Bild des Berliner Fernsehturms"
+            loading="lazy"
           />
         </div>
       </div>
-      <div class="font-berlin flex w-full flex-col items-center justify-between">
-        <div id="root" class="flex w-full h-full flex-col"></div>
+      <div
+        class="font-berlin flex w-full flex-col items-center justify-between"
+      >
+        <div id="root" class="flex h-full w-full flex-col"></div>
       </div>
     </div>
     <script type="module" src="/src/main.tsx"></script>
