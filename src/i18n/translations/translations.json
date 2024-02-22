@@ -151,9 +151,9 @@
     "intro.p2": "Don't have an appointment yet?",
     "intro.p2.link": " Book an appointment.",
 
-    "feedback.question": "How do you like the application?",
-    "feedback.link": "https://citylabberlin.typeform.com/to/kCdnCgvC?product_id=checklist",
-    "feedback.link.label": "Feel free to give us some feedback",
+    "feedback.question": "Do you like this application?",
+    "feedback.link": "https://citylabberlin.typeform.com/to/wkhvLJyN?product_id=checklist",
+    "feedback.link.label": "Please answer a few questions.",
 
     "first-registration.q1": "Are you registering in Berlin for the first time?",
     "first-registration.q1.tooltip": "If yes, documents such as a birth or marriage certificate may need to be presented.",
