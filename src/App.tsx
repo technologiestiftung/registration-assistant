@@ -12,7 +12,7 @@ function App() {
 
   return (
     <>
-      <div className="flex w-full print:hidden md:hidden">
+      <div className="flex w-full md:hidden print:hidden">
         <Progress id={"mobile-progress-bar"} />
       </div>
 
@@ -35,12 +35,12 @@ function App() {
 
       <Feedback />
 
-      <div className="hidden w-full print:hidden md:flex">
+      <div className="hidden w-full md:flex print:hidden">
         <Progress id={"desktop-progress-bar"} />
       </div>
 
       <div
-        className={`w-full border-b border-b-berlin-black-40 ${
+        className={`w-full border-b ${
           currentStep === 0 || currentStep === 16 ? "flex" : "hidden md:flex"
         } `}
       ></div>
