@@ -1,12 +1,11 @@
 import { useFirstRegistrationStore } from "./store";
 import { useProgressStore } from "../../steps/store";
-import { useI18nStore } from "../../../i18n/store";
-import { t } from "../../../i18n/translations";
 import { RadioInput } from "../../radio-input";
 import { SecondaryButton } from "../../buttons/secondary-button";
 import { PrimaryButton } from "../../buttons/primary-button";
 import { InfoButton } from "../../buttons/info-button";
-import { useTimeout } from "../../../hooks/useTimeout.tsx";
+import { useTimeout } from "../../../hooks/useTimeout";
+import { useI18n } from "../../../i18n/hook/useI18n";
 
 export function IsRegisteringSpouse() {
   const isRegisteringSpouse = useFirstRegistrationStore(
@@ -19,7 +18,7 @@ export function IsRegisteringSpouse() {
   const goToPreviousStep = useProgressStore((state) => state.goToPreviousStep);
   const goToNextStep = useProgressStore((state) => state.goToNextStep);
 
-  const language = useI18nStore((state) => state.language);
+  const t = useI18n();
 
   const options = ["yes", "no"];
 
@@ -38,19 +37,19 @@ export function IsRegisteringSpouse() {
       }}
     >
       <div className="flex flex-col gap-4">
-        <h3 className="flex w-full items-baseline justify-between gap-3">
-          <p>{t("first-registration.q3", language)}</p>
+        <div className="flex w-full items-baseline justify-between gap-3">
+          <p>{t("first-registration.q3")}</p>
           <div
             className="tooltip text-start sm:tooltip-top ltr:tooltip-left rtl:tooltip-right"
-            data-tip={t("first-registration.q3.tooltip", language)}
+            data-tip={t("first-registration.q3.tooltip")}
           >
             <InfoButton />
           </div>
-        </h3>
+        </div>
         <div className="flex flex-col gap-1">
           {options.map((option) => {
             const name = "first-registration.q3.radio";
-            const label = t(option, language);
+            const label = t(option);
             const isChecked =
               (option === "yes" && isRegisteringSpouse === true) ||
               (option === "no" && isRegisteringSpouse === false);
@@ -76,19 +75,16 @@ export function IsRegisteringSpouse() {
               ? `tooltip text-start sm:tooltip-top ltr:tooltip-left rtl:tooltip-right before:w-[9rem] ${arePointerEventsDisabled ? "pointer-events-none" : ""}`
               : undefined
           }`}
-          data-tip={!isValid ? t("button.next.tooltip", language) : undefined}
+          data-tip={!isValid ? t("button.next.tooltip") : undefined}
         >
           <PrimaryButton
-            label={t("button.next", language)}
+            label={t("button.next")}
             type="submit"
             disabled={!isValid}
           />
         </div>
 
-        <SecondaryButton
-          label={t("button.back", language)}
-          onClick={goToPreviousStep}
-        />
+        <SecondaryButton label={t("button.back")} onClick={goToPreviousStep} />
       </div>
     </form>
   );

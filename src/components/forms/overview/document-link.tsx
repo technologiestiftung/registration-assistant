@@ -1,8 +1,7 @@
-import { t } from "../../../i18n/translations";
-import { useI18nStore } from "../../../i18n/store";
+import { useI18n } from "../../../i18n/hook/useI18n";
 
 export function DocumentLink({ id }: { id: string }) {
-  const language = useI18nStore((state) => state.language);
+  const t = useI18n();
 
   let url = "";
 
@@ -62,7 +61,7 @@ export function DocumentLink({ id }: { id: string }) {
             d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3"
           />
         </svg>
-        {t("download", language)}
+        {t("download")}
       </a>
     </div>
   );

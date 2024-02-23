@@ -1,8 +1,9 @@
-import { t } from "../../i18n/translations";
 import { useI18nStore } from "../../i18n/store";
+import { useI18n } from "../../i18n/hook/useI18n";
 
 export function Appointment() {
   const language = useI18nStore((state) => state.language);
+  const t = useI18n();
 
   const options: Intl.DateTimeFormatOptions = {
     weekday: "long",
@@ -24,11 +25,11 @@ export function Appointment() {
     <>
       {appointment ? (
         <p>
-          <b>{t("your-appointment", language)}:</b>
+          <b>{t("your-appointment")}:</b>
           <br />
           {dateTimeFormat.format(appointment!)}
           <br className="py-1" />
-          <b>{t("address", language)}</b>:
+          <b>{t("address")}</b>:
           <br />
           Schlesische Straße 27A, 10997 Berlin (
           <a
@@ -36,20 +37,20 @@ export function Appointment() {
             target="_blank"
             className="text-blue-700 underline visited:text-purple-500"
           >
-            {t("plan-route", language)}
+            {t("plan-route")}
           </a>
           )
         </p>
       ) : (
         <p className="print:hidden">
-          {t("intro.p2", language)}
+          {t("intro.p2")}
           <br />
           <a
             href="https://service.berlin.de/dienstleistung/120686/"
             target="_blank"
             className="text-blue-700 underline visited:text-purple-500"
           >
-            {t("intro.p2.link", language)}
+            {t("intro.p2.link")}
           </a>
         </p>
       )}
