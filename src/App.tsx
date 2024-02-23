@@ -23,21 +23,16 @@ function App() {
             <Progress id={"mobile-progress-bar"} />
           </div>
 
-          <header className="flex w-full flex-col px-5 py-5 print:hidden">
-            <div className="flex w-full items-center justify-between">
-              <HomeButton />
-              <div className="hidden  justify-center sm:flex">
-                <HeaderTitle />
-              </div>
-              <LanguageSelect />
-            </div>
-            <div className="flex justify-center pt-14 sm:hidden">
-              <HeaderTitle />
-            </div>
+          <header className="flex w-full items-center justify-between px-5 py-5 print:hidden">
+            <HomeButton />
+            <LanguageSelect />
           </header>
 
-          <main className="flex h-full items-end justify-center px-5 pb-11 print:items-start">
-            <Steps />
+          <main className="flex h-full justify-center px-5 pb-11 print:items-start">
+            <div className="flex flex-col items-start">
+              <HeaderTitle />
+              <Steps />
+            </div>
           </main>
 
           <Feedback />

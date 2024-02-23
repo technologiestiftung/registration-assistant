@@ -5,8 +5,6 @@ export function HeaderTitle() {
   const language = useI18nStore((state) => state.language);
 
   return (
-    <div className="flex w-full items-center justify-center">
-      <h1 className="text-xl font-bold md:text-2xl">{t("title", language)}</h1>
-    </div>
+    <h1 className="text-xl font-bold md:text-2xl">{t("title", language)}</h1>
   );
 }
