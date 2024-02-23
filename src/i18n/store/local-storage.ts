@@ -1,5 +1,5 @@
 import { availableLanguagesEnum, i18n, i18nSchema } from "./types.ts";
-import { t } from "../translations";
+import { useI18nStore } from "./index.ts";
 
 const I18N_KEY = "i18n";
 
@@ -18,7 +18,11 @@ export function getLocalStorage(): i18n {
     const { language } = i18nSchema.parse(foundItemObject);
 
     document.documentElement.lang = language;
-    document.documentElement.dir = t("dir", language);
+    import(`../translations/${language}.json`).then((module) => {
+      useI18nStore.getState().setTranslations(language, module.default);
+      document.documentElement.dir =
+        useI18nStore.getState().translations[language]!.dir;
+    });
 
     return {
       language,

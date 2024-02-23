@@ -1,11 +1,11 @@
 import { useProgressStore } from "../../steps/store";
-import { useI18nStore } from "../../../i18n/store";
-import { t } from "../../../i18n/translations";
+import { useI18n } from "../../../i18n/hook/useI18n";
 
 export function HomeButton() {
   const goToStart = useProgressStore((state) => state.goToStart);
-  const language = useI18nStore((state) => state.language);
   const currentStep = useProgressStore((state) => state.currentStep);
+
+  const t = useI18n();
 
   const isHomeButtonHidden = currentStep === 0;
 
@@ -33,10 +33,8 @@ export function HomeButton() {
           />
         </svg>
 
-        <span className="block lg:hidden">{t("start.mobile", language)}</span>
-        <span className="hidden text-lg lg:block">
-          {t("start.desktop", language)}
-        </span>
+        <span className="block lg:hidden">{t("start.mobile")}</span>
+        <span className="hidden text-lg lg:block">{t("start.desktop")}</span>
       </button>
     </>
   );

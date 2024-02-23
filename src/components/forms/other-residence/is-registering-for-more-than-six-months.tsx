@@ -1,12 +1,11 @@
 import { useOtherResidenceStore } from "./store";
 import { useProgressStore } from "../../steps/store";
-import { useI18nStore } from "../../../i18n/store";
-import { t } from "../../../i18n/translations";
 import { RadioInput } from "../../radio-input";
 import { InfoButton } from "../../buttons/info-button";
 import { PrimaryButton } from "../../buttons/primary-button";
 import { SecondaryButton } from "../../buttons/secondary-button";
-import { useTimeout } from "../../../hooks/useTimeout.tsx";
+import { useTimeout } from "../../../hooks/useTimeout";
+import { useI18n } from "../../../i18n/hook/useI18n";
 
 export function IsRegisteringForMoreThanSixMonths() {
   const isRegisteringForMoreThanSixMonths = useOtherResidenceStore(
@@ -23,7 +22,7 @@ export function IsRegisteringForMoreThanSixMonths() {
   const goToPreviousStep = useProgressStore((state) => state.goToPreviousStep);
   const goToNextStep = useProgressStore((state) => state.goToNextStep);
 
-  const language = useI18nStore((state) => state.language);
+  const t = useI18n();
 
   const options = ["yes", "no"];
 
@@ -41,10 +40,10 @@ export function IsRegisteringForMoreThanSixMonths() {
     >
       <div className="flex flex-col gap-4">
         <div className="flex w-full items-baseline justify-between gap-3">
-          <p>{t("other-residence.q4", language)}</p>
+          <p>{t("other-residence.q4")}</p>
           <div
             className="tooltip text-start sm:tooltip-top ltr:tooltip-left rtl:tooltip-right"
-            data-tip={t("other-residence.q4.tooltip", language)}
+            data-tip={t("other-residence.q4.tooltip")}
           >
             <InfoButton />
           </div>
@@ -58,7 +57,7 @@ export function IsRegisteringForMoreThanSixMonths() {
               (option === "no" && isRegisteringForMoreThanSixMonths === false);
             const onChange = () =>
               setIsRegisteringForMoreThanSixMonths(option === "yes");
-            const label = t(option, language);
+            const label = t(option);
 
             return (
               <RadioInput
@@ -74,13 +73,13 @@ export function IsRegisteringForMoreThanSixMonths() {
       </div>
 
       <p className={`${showHint ? "block" : "hidden"}`}>
-        {t("other-residence.q4.hint", language)}{" "}
+        {t("other-residence.q4.hint")}{" "}
         <a
           href="https://service.berlin.de/terminvereinbarung/termin/manage/"
           target="_blank"
           className="text-blue-700 underline visited:text-purple-500"
         >
-          {t("other-residence.q4.hint.link.label", language)}{" "}
+          {t("other-residence.q4.hint.link.label")}{" "}
         </a>
       </p>
 
@@ -93,24 +92,18 @@ export function IsRegisteringForMoreThanSixMonths() {
           }`}
           data-tip={
             !isValid || !needsRegistration
-              ? t(
-                  showHint ? "other-residence.q4.hint" : "button.next.tooltip",
-                  language,
-                )
+              ? t(showHint ? "other-residence.q4.hint" : "button.next.tooltip")
               : undefined
           }
         >
           <PrimaryButton
-            label={t("button.next", language)}
+            label={t("button.next")}
             type="submit"
             disabled={!isValid || !needsRegistration}
           />
         </div>
 
-        <SecondaryButton
-          label={t("button.back", language)}
-          onClick={goToPreviousStep}
-        />
+        <SecondaryButton label={t("button.back")} onClick={goToPreviousStep} />
       </div>
     </form>
   );

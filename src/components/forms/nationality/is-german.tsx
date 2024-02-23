@@ -1,12 +1,11 @@
 import { useNationalityStore } from "./store";
 import { useProgressStore } from "../../steps/store";
-import { useI18nStore } from "../../../i18n/store";
-import { t } from "../../../i18n/translations";
 import { RadioInput } from "../../radio-input";
 import { InfoButton } from "../../buttons/info-button";
 import { PrimaryButton } from "../../buttons/primary-button";
 import { SecondaryButton } from "../../buttons/secondary-button";
-import { useTimeout } from "../../../hooks/useTimeout.tsx";
+import { useTimeout } from "../../../hooks/useTimeout";
+import { useI18n } from "../../../i18n/hook/useI18n";
 
 export function IsGerman() {
   const isGerman = useNationalityStore((state) => state.isGerman);
@@ -17,7 +16,7 @@ export function IsGerman() {
   const goToPreviousStep = useProgressStore((state) => state.goToPreviousStep);
   const goToNextStep = useProgressStore((state) => state.goToNextStep);
 
-  const language = useI18nStore((state) => state.language);
+  const t = useI18n();
 
   const options = ["yes", "no"];
 
@@ -35,10 +34,10 @@ export function IsGerman() {
     >
       <div className="flex flex-col gap-4">
         <div className="flex w-full items-baseline justify-between gap-3">
-          <p>{t("nationality.q1", language)}</p>
+          <p>{t("nationality.q1")}</p>
           <div
             className="tooltip text-start sm:tooltip-top ltr:tooltip-left rtl:tooltip-right"
-            data-tip={t("nationality.q1.tooltip", language)}
+            data-tip={t("nationality.q1.tooltip")}
           >
             <InfoButton />
           </div>
@@ -50,7 +49,7 @@ export function IsGerman() {
               (option === "yes" && isGerman === true) ||
               (option === "no" && isGerman === false);
             const onChange = () => setIsGerman(option === "yes");
-            const label = t(option, language);
+            const label = t(option);
 
             return (
               <RadioInput
@@ -72,19 +71,16 @@ export function IsGerman() {
               ? `tooltip text-start sm:tooltip-top ltr:tooltip-left rtl:tooltip-right before:w-[9rem] ${arePointerEventsDisabled ? "pointer-events-none" : ""}`
               : undefined
           }`}
-          data-tip={!isValid ? t("button.next.tooltip", language) : undefined}
+          data-tip={!isValid ? t("button.next.tooltip") : undefined}
         >
           <PrimaryButton
-            label={t("button.next", language)}
+            label={t("button.next")}
             type="submit"
             disabled={!isValid}
           />
         </div>
 
-        <SecondaryButton
-          label={t("button.back", language)}
-          onClick={goToPreviousStep}
-        />
+        <SecondaryButton label={t("button.back")} onClick={goToPreviousStep} />
       </div>
     </form>
   );

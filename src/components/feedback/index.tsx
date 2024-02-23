@@ -1,22 +1,21 @@
-import { t } from "../../i18n/translations";
-import { useI18nStore } from "../../i18n/store";
+import { useI18n } from "../../i18n/hook/useI18n";
 
 export function Feedback() {
-  const language = useI18nStore((state) => state.language);
+  const t = useI18n();
 
   return (
     <>
       <div className="flex w-full flex-wrap justify-center gap-x-2 px-4 py-4 text-sm">
         <p>
-          {t("feedback.intro", language)} <br className="hidden md:inline" />{" "}
-          {t("feedback.question", language)}{" "}
+          {t("feedback.intro")} <br className="hidden md:inline" />{" "}
+          {t("feedback.question")}{" "}
           <a
             className="text-blue-700 underline"
-            href={t("feedback.link", language)}
+            href={t("feedback.link")}
             target="_blank"
             rel="noopener noreferrer"
           >
-            {t("feedback.link.label", language)}
+            {t("feedback.link.label")}
           </a>
         </p>
       </div>

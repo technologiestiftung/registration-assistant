@@ -1,10 +1,9 @@
-import { t } from "../../i18n/translations";
-import { useI18nStore } from "../../i18n/store";
 import { useProgressStore } from "../steps/store";
+import { useI18n } from "../../i18n/hook/useI18n.tsx";
 
 export function Footer() {
-  const language = useI18nStore((state) => state.language);
   const currentStep = useProgressStore((state) => state.currentStep);
+  const t = useI18n();
 
   return (
     <footer
@@ -16,7 +15,7 @@ export function Footer() {
       <div className="flex w-full flex-wrap justify-start gap-y-5">
         <div className="flex w-full flex-wrap justify-start gap-x-10 gap-y-5 px-8 py-2 text-sm sm:justify-center md:gap-x-20 md:px-5">
           <div className="flex flex-col gap-4">
-            {t("logo.t1", language)}
+            {t("logo.t1")}
             <img
               src="/images/logo-citylab-berlin.svg"
               alt="Logo von CityLab Berlin"
@@ -25,7 +24,7 @@ export function Footer() {
             />
           </div>
           <div className="flex flex-col gap-4">
-            {t("logo.t2", language)}
+            {t("logo.t2")}
             <img
               src="/images/logo-technologiestiftung-berlin-de.svg"
               alt="Logo von Technologiestiftung Berlin"
@@ -34,7 +33,7 @@ export function Footer() {
             />
           </div>
           <div className="flex flex-col gap-4">
-            {t("logo.t3", language)}
+            {t("logo.t3")}
             <img
               src="/images/logo-senatskanzlei-buergermeister-vertikal.svg"
               alt="Logo von Berlins Regierender Bürgermeister"
@@ -51,15 +50,15 @@ export function Footer() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            {t("dataPrivacy", language)}
+            {t("dataPrivacy")}
           </a>
           <a
             className="flex flex-col gap-4 text-gray-400 underline"
-            href={t("imprint.link", language)}
+            href={t("imprint.link")}
             target="_blank"
             rel="noopener noreferrer"
           >
-            {t("imprint", language)}
+            {t("imprint")}
           </a>
         </div>
       </div>

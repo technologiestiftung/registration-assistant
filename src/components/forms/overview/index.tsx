@@ -1,16 +1,15 @@
 import { useOverviewStore } from "./store";
 import { useProgressStore } from "../../steps/store";
-import { useI18nStore } from "../../../i18n/store";
-import { t } from "../../../i18n/translations";
 import { DocumentCheckbox } from "./document-checkbox.tsx";
 import { Appointment } from "../../appointment";
 import { SecondaryButton } from "../../buttons/secondary-button";
+import { useI18n } from "../../../i18n/hook/useI18n.tsx";
 
 export function Overview() {
   const requiredDocs = useOverviewStore((state) => state.docs);
   const goToPreviousStep = useProgressStore((state) => state.goToPreviousStep);
 
-  const language = useI18nStore((state) => state.language);
+  const t = useI18n();
 
   const documents = [
     ...Array.from(
@@ -23,10 +22,10 @@ export function Overview() {
       <Appointment />
 
       <h2 className="flex w-full items-center justify-between gap-3 font-bold">
-        {t("overview.title", language)}
+        {t("overview.title")}
       </h2>
 
-      <p dangerouslySetInnerHTML={{ __html: t("overview.text", language) }}></p>
+      <p dangerouslySetInnerHTML={{ __html: t("overview.text") }}></p>
 
       <ul className="flex flex-col gap-2">
         {documents.map(([key, value]) => (
@@ -44,7 +43,7 @@ export function Overview() {
           }}
           className="flex items-center gap-1 border-2 border-blue-950 bg-blue-950 text-white hover:border-blue-900 hover:bg-blue-900 print:hidden"
         >
-          <span className="py-2 ltr:pl-4 rtl:pr-4">{t("print", language)}</span>
+          <span className="py-2 ltr:pl-4 rtl:pr-4">{t("print")}</span>
           <div className="py-2 ltr:pl-3 ltr:pr-4 rtl:pl-4 rtl:pr-3">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -63,10 +62,7 @@ export function Overview() {
           </div>
         </button>
 
-        <SecondaryButton
-          label={t("button.back", language)}
-          onClick={goToPreviousStep}
-        />
+        <SecondaryButton label={t("button.back")} onClick={goToPreviousStep} />
       </div>
     </div>
   );

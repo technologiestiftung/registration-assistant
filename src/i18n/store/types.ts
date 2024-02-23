@@ -22,6 +22,14 @@ export type i18n = z.infer<typeof i18nSchema>;
 
 const i18nStoreSchema = i18nSchema.extend({
   setLanguage: z.function().args(availableLanguagesSchema).returns(z.void()),
+  translations: z.record(
+    z.string(),
+    z.record(z.string(), z.string()).optional(),
+  ),
+  setTranslations: z
+    .function()
+    .args(availableLanguagesSchema, z.record(z.string()))
+    .returns(z.void()),
 });
 
 export type i18nStore = z.infer<typeof i18nStoreSchema>;

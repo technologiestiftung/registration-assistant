@@ -1,8 +1,7 @@
 import { DocumentLink } from "./document-link.tsx";
 import { useOverviewStore } from "./store";
-import { t } from "../../../i18n/translations";
-import { useI18nStore } from "../../../i18n/store";
 import { InfoButton } from "../../buttons/info-button";
+import { useI18n } from "../../../i18n/hook/useI18n";
 
 export function DocumentCheckbox({
   id,
@@ -12,7 +11,7 @@ export function DocumentCheckbox({
   value: boolean | null;
 }) {
   const setDocs = useOverviewStore((state) => state.setDocs);
-  const language = useI18nStore((state) => state.language);
+  const t = useI18n();
 
   return (
     <li className="flex w-full flex-col items-center gap-2 border border-berlin-gray bg-berlin-lighter-gray">
@@ -55,13 +54,13 @@ export function DocumentCheckbox({
               value === true ? "text-gray-400 line-through" : undefined
             }
           >
-            {t(id, language)}
+            {t(id)}
           </span>
         </div>
 
         <div
           className="tooltip text-start sm:tooltip-top ltr:tooltip-left rtl:tooltip-right print:hidden"
-          data-tip={t(`${id}.tooltip`, language)}
+          data-tip={t(`${id}.tooltip`)}
         >
           <InfoButton />
         </div>
