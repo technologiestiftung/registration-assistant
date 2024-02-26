@@ -15,7 +15,7 @@ export function Intro() {
           e.preventDefault();
           goToNextStep();
         }}
-        className="flex w-full flex-col gap-9 lg:h-96"
+        className="flex w-full flex-col gap-9"
       >
         <div className="flex flex-col gap-4">
           <p>{t("intro.p1", language)}</p>

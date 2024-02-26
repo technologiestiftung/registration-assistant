@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="de">
+<html lang="de" dir="ltr">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="" />
@@ -25,25 +25,7 @@
     <title>Anmelde-Check</title>
   </head>
   <body>
-    <div class="flex w-screen">
-      <div
-        class="sticky left-0 top-0 hidden h-screen w-2/5 bg-blue-950 md:flex"
-      >
-        <div class="flex w-full items-center justify-center">
-          <img
-            src="/images/fernsehturm_alpha_paperplane.png"
-            class="h-screen object-cover"
-            alt="Bild des Berliner Fernsehturms"
-            loading="lazy"
-          />
-        </div>
-      </div>
-      <div
-        class="font-berlin flex w-full flex-col items-center justify-between"
-      >
-        <div id="root" class="flex h-full w-full flex-col"></div>
-      </div>
-    </div>
+    <div id="root" class="flex min-h-screen w-screen max-w-full"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

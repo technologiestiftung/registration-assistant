@@ -13,14 +13,14 @@ export function SecondaryButton({
       type={type}
       onClick={onClick}
     >
-      <div className="pl-4">
+      <div className="ltr:pl-4 rtl:pr-4">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           height="16"
           width="14"
           viewBox="0 0 448 512"
           strokeWidth={1.5}
-          className="rotate-180 scale-125 transform"
+          className="scale-125 transform ltr:rotate-180 rtl:rotate-0"
           fill="currentColor"
         >
           <div
@@ -33,7 +33,7 @@ export function SecondaryButton({
         </svg>
       </div>
 
-      <span className="py-2 pl-3 pr-4">{label}</span>
+      <span className="py-2 ltr:pl-3 ltr:pr-4 rtl:pl-4 rtl:pr-3">{label}</span>
     </button>
   );
 }
