@@ -56,7 +56,7 @@ export function HasChild() {
             return (
               <RadioInput
                 key={option}
-                name={`${name}.${option}`}
+                name={name}
                 label={label}
                 isChecked={isChecked}
                 onChange={onChange}
