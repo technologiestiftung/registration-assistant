@@ -13,7 +13,7 @@ function App() {
 
   return (
     <div className="flex w-full">
-      <div className="hidden w-2/5 md:flex print:hidden">
+      <div className="sticky left-0 top-0 hidden h-screen w-2/5 bg-blue-950 md:flex print:hidden">
         <VerticalSidebarImage />
       </div>
 
