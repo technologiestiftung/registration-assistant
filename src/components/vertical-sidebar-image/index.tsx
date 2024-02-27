@@ -1,12 +1,18 @@
 export function VerticalSidebarImage() {
   return (
     <div className="flex h-full w-full items-center justify-center">
-      <img
-        src="/images/fernsehturm.jpg"
-        className="h-full object-cover saturate-150"
-        alt="Bild des Berliner Fernsehturms"
-        loading="lazy"
-      />
+      <picture className="h-full">
+        <source
+          media="(min-width:1000px)"
+          srcSet="/images/fernsehturm_alpha_paperplane.png"
+        />
+        <img
+          src="/images/fernsehturm_alpha_paperplane_slim.png"
+          alt="Flowers"
+          className="h-full object-cover"
+          loading="lazy"
+        />
+      </picture>
     </div>
   );
 }
