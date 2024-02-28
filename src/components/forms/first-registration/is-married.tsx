@@ -34,15 +34,15 @@ export function IsMarried() {
       }}
     >
       <div className="flex flex-col gap-4">
-        <h3 className="flex w-full items-baseline justify-between gap-3">
-          {t("first-registration.q2", language)}
+        <div className="flex w-full items-baseline justify-between gap-3">
+          <p>{t("first-registration.q2", language)}</p>
           <div
             className="tooltip text-start sm:tooltip-top ltr:tooltip-left rtl:tooltip-right"
             data-tip={t("first-registration.q2.tooltip", language)}
           >
             <InfoButton />
           </div>
-        </h3>
+        </div>
         <div className="flex flex-col gap-1">
           {options.map((option) => {
             const name = "first-registration.q2.radio";

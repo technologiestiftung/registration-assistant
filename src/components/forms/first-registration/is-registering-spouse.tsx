@@ -39,7 +39,7 @@ export function IsRegisteringSpouse() {
     >
       <div className="flex flex-col gap-4">
         <h3 className="flex w-full items-baseline justify-between gap-3">
-          {t("first-registration.q3", language)}
+          <p>{t("first-registration.q3", language)}</p>
           <div
             className="tooltip text-start sm:tooltip-top ltr:tooltip-left rtl:tooltip-right"
             data-tip={t("first-registration.q3.tooltip", language)}

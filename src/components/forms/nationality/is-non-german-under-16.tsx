@@ -38,15 +38,15 @@ export function IsNonGermanUnder16() {
       }}
     >
       <div className="flex flex-col gap-4">
-        <h3 className="flex w-full items-baseline justify-between gap-3">
-          {t("nationality.q4", language)}
+        <div className="flex w-full items-baseline justify-between gap-3">
+          <p>{t("nationality.q4", language)}</p>
           <div
             className="tooltip text-start sm:tooltip-top ltr:tooltip-left rtl:tooltip-right"
             data-tip={t("nationality.q4.tooltip", language)}
           >
             <InfoButton />
           </div>
-        </h3>
+        </div>
         <div className="flex flex-col gap-1">
           {options.map((option) => {
             const name = "nationality.q4.radio";
