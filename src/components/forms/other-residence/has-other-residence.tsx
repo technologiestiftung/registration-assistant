@@ -38,15 +38,15 @@ export function HasOtherResidence() {
       }}
     >
       <div className="flex flex-col gap-4">
-        <h3 className="flex w-full items-baseline justify-between gap-3">
-          {t("other-residence.q1", language)}
+        <div className="flex w-full items-baseline justify-between gap-3">
+          <p>{t("other-residence.q1", language)}</p>
           <div
             className="tooltip text-start sm:tooltip-top ltr:tooltip-left rtl:tooltip-right"
             data-tip={t("other-residence.q1.tooltip", language)}
           >
             <InfoButton />
           </div>
-        </h3>
+        </div>
         <div className="flex flex-col gap-1">
           {options.map((option) => {
             const name = "other-residence.q1.radio";

@@ -34,15 +34,15 @@ export function IsEuropean() {
       }}
     >
       <div className="flex flex-col gap-4">
-        <h3 className="flex w-full items-baseline justify-between gap-3">
-          {t("nationality.q3", language)}
+        <div className="flex w-full items-baseline justify-between gap-3">
+          <p>{t("nationality.q3", language)}</p>
           <div
             className="tooltip text-start sm:tooltip-top ltr:tooltip-left rtl:tooltip-right"
             data-tip={t("nationality.q3.tooltip", language)}
           >
             <InfoButton />
           </div>
-        </h3>
+        </div>
         <div className="flex flex-col gap-1">
           {options.map((option) => {
             const name = "nationality.q3.radio";
