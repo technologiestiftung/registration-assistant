@@ -42,7 +42,8 @@ export function Appointment() {
         </p>
       ) : (
         <p className="print:hidden">
-          {t("intro.p2", language)}{" "}
+          {t("intro.p2", language)}
+          <br />
           <a
             href="https://service.berlin.de/dienstleistung/120686/"
             target="_blank"

@@ -35,8 +35,8 @@ test("should have 4 documents in their checklist: registrationForm, movingInConf
   await yesRadio.click(); // do you have the german nationality?
   await nextButton.click();
 
-  yesRadio = page.getByLabel("Ja");
-  await yesRadio.click(); // Are you under 16?
+  yesRadio = page.getByLabel("Nein");
+  await yesRadio.click(); // Are you over 16?
   await nextButton.click();
 
   noRadio = page
@@ -107,11 +107,8 @@ test("should have 3 documents in their checklist: registrationForm, movingInConf
   await yesRadio.click(); // do you have an EU nationality?
   await nextButton.click();
 
-  noRadio = page
-    .locator("div")
-    .filter({ hasText: /^Nein$/ })
-    .getByRole("radio");
-  await noRadio.click(); // Are you under 16?
+  noRadio = page.locator("div").filter({ hasText: /^Ja$/ }).getByRole("radio");
+  await noRadio.click(); // Are you over 16?
   await nextButton.click();
 
   noRadio = page
@@ -185,8 +182,8 @@ test("should have 4 documents in their checklist: registrationForm, movingInConf
   await yesRadio.click(); // do you have an EU nationality?
   await nextButton.click();
 
-  yesRadio = page.getByLabel("Ja");
-  await yesRadio.click(); // Are you under 16?
+  yesRadio = page.getByLabel("Nein");
+  await yesRadio.click(); // Are you over 16?
   await nextButton.click();
 
   noRadio = page
@@ -267,8 +264,8 @@ test("should have 4 documents in their checklist: registrationForm, movingInConf
   await noRadio.click(); // do you have an EU nationality?
   await nextButton.click();
 
-  let yesRadio = page.getByLabel("Ja");
-  await yesRadio.click(); // Are you under 16?
+  let yesRadio = page.getByLabel("Nein");
+  await yesRadio.click(); // Are you over 16?
   await nextButton.click();
 
   noRadio = page

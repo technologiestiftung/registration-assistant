@@ -18,10 +18,10 @@ export const useNationalityStore = create<NationalityStore>((set, get) => ({
 
     set({
       isGerman,
-      isGermanUnder16: null,
+      isGermanOver16: null,
       isEuropean: null,
       isRefugee: null,
-      isNonGermanUnder16: null,
+      isNonGermanOver16: null,
       requiredDocs,
     });
 
@@ -29,18 +29,18 @@ export const useNationalityStore = create<NationalityStore>((set, get) => ({
     useOverviewStore.getState().setRequiredDocs(requiredDocs);
   },
 
-  isGermanUnder16: getLocalStorage().isGermanUnder16,
-  setIsGermanUnder16(isGermanUnder16) {
+  isGermanOver16: getLocalStorage().isGermanOver16,
+  setIsGermanOver16(isGermanOver16) {
     const requiredDocs = {
-      germanIdOrPassportOrChildPassport: isGermanUnder16,
-      germanIdOrPassport: !isGermanUnder16,
+      germanIdOrPassportOrChildPassport: !isGermanOver16,
+      germanIdOrPassport: isGermanOver16,
       euIdOrPassportOrReplacement: false,
       nonEuIdOrPassportOrReplacement: false,
-      confirmationOfCustodian: isGermanUnder16,
+      confirmationOfCustodian: !isGermanOver16,
     };
 
     set({
-      isGermanUnder16,
+      isGermanOver16,
       requiredDocs,
     });
 
@@ -65,15 +65,15 @@ export const useNationalityStore = create<NationalityStore>((set, get) => ({
     useOverviewStore.getState().setRequiredDocs(requiredDocs);
   },
 
-  isNonGermanUnder16: getLocalStorage().isNonGermanUnder16,
-  setIsNonGermanUnder16(isNonGermanUnder16: boolean) {
+  isNonGermanOver16: getLocalStorage().isNonGermanOver16,
+  setIsNonGermanOver16(isNonGermanOver16: boolean) {
     const requiredDocs = {
       ...get().requiredDocs,
-      confirmationOfCustodian: isNonGermanUnder16,
+      confirmationOfCustodian: !isNonGermanOver16,
     };
 
     set({
-      isNonGermanUnder16,
+      isNonGermanOver16,
       requiredDocs,
     });
 

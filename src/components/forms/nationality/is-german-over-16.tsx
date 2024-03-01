@@ -8,15 +8,13 @@ import { PrimaryButton } from "../../buttons/primary-button";
 import { SecondaryButton } from "../../buttons/secondary-button";
 import { useTimeout } from "../../../hooks/useTimeout.tsx";
 
-export function IsNonGermanUnder16() {
-  const isNonGermanUnder16 = useNationalityStore(
-    (state) => state.isNonGermanUnder16,
-  );
-  const setIsNonGermanUnder16 = useNationalityStore(
-    (state) => state.setIsNonGermanUnder16,
+export function IsGermanOver16() {
+  const isGermanOver16 = useNationalityStore((state) => state.isGermanOver16);
+  const setIsGermanOver16 = useNationalityStore(
+    (state) => state.setIsGermanOver16,
   );
 
-  const isValid = isNonGermanUnder16 !== null;
+  const isValid = isGermanOver16 !== null;
 
   const goToPreviousStep = useProgressStore((state) => state.goToPreviousStep);
   const goToNextStep = useProgressStore((state) => state.goToNextStep);
@@ -39,21 +37,21 @@ export function IsNonGermanUnder16() {
     >
       <div className="flex flex-col gap-4">
         <div className="flex w-full items-baseline justify-between gap-3">
-          <p>{t("nationality.q4", language)}</p>
+          <p>{t("nationality.q2", language)}</p>
           <div
             className="tooltip text-start sm:tooltip-top ltr:tooltip-left rtl:tooltip-right"
-            data-tip={t("nationality.q4.tooltip", language)}
+            data-tip={t("nationality.q2.tooltip", language)}
           >
             <InfoButton />
           </div>
         </div>
         <div className="flex flex-col gap-1">
           {options.map((option) => {
-            const name = "nationality.q4.radio";
+            const name = "nationality.q2.radio";
             const isChecked =
-              (option === "yes" && isNonGermanUnder16 === true) ||
-              (option === "no" && isNonGermanUnder16 === false);
-            const onChange = () => setIsNonGermanUnder16(option === "yes");
+              (option === "yes" && isGermanOver16 === true) ||
+              (option === "no" && isGermanOver16 === false);
+            const onChange = () => setIsGermanOver16(option === "yes");
             const label = t(option, language);
 
             return (

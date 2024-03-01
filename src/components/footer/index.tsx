@@ -18,7 +18,7 @@ export function Footer() {
           <div className="flex flex-col gap-4">
             {t("logo.t1", language)}
             <img
-              src="/images/logo-citylab-berlin-outline.svg"
+              src="/images/logo-citylab-berlin.svg"
               alt="Logo von CityLab Berlin"
               className="w-32"
               loading="lazy"

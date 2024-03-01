@@ -11,9 +11,9 @@ import {
 } from "../forms/first-registration";
 import {
   IsGerman,
-  IsGermanUnder16,
+  IsGermanOver16,
   IsEuropean,
-  IsNonGermanUnder16,
+  IsNonGermanOver16,
   IsRefugee,
 } from "../forms/nationality";
 import {
@@ -35,9 +35,9 @@ export function Steps() {
     <IsRegisteringChild />,
     <IsRegisteringMoreThanTwo />,
     <IsGerman />,
-    <IsGermanUnder16 />,
+    <IsGermanOver16 />,
     <IsEuropean />,
-    <IsNonGermanUnder16 />,
+    <IsNonGermanOver16 />,
     <IsRefugee />,
     <HasOtherResidence />,
     <IsOtherResidenceAbroad />,
@@ -48,7 +48,7 @@ export function Steps() {
 
   return (
     <div
-      className={`flex h-full w-[22rem] flex-col gap-4 print:w-full lg:text-lg ${
+      className={`flex h-full w-[22rem] flex-col gap-4 lg:text-lg print:w-full ${
         currentStep < 16 && "pt-4 lg:pt-12"
       }`}
     >
