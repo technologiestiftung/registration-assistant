@@ -8,10 +8,10 @@ export function getLocalStorage(): Nationality {
   if (!foundItemJson) {
     return {
       isGerman: null,
-      isGermanUnder16: null,
+      isGermanOver16: null,
       isEuropean: null,
       isRefugee: null,
-      isNonGermanUnder16: null,
+      isNonGermanOver16: null,
       requiredDocs: {
         germanIdOrPassportOrChildPassport: false,
         confirmationOfCustodian: false,
@@ -32,10 +32,10 @@ export function getLocalStorage(): Nationality {
 
   return {
     isGerman: null,
-    isGermanUnder16: null,
+    isGermanOver16: null,
     isEuropean: null,
     isRefugee: null,
-    isNonGermanUnder16: null,
+    isNonGermanOver16: null,
     requiredDocs: {
       germanIdOrPassportOrChildPassport: false,
       confirmationOfCustodian: false,

@@ -9,7 +9,7 @@ export function VerticalSidebarImage() {
         <img
           src="/images/fernsehturm_alpha_paperplane_slim.png"
           alt="Flowers"
-          className="h-full object-cover"
+          className="h-full object-cover ltr:scale-x-100 rtl:-scale-x-100"
           loading="lazy"
         />
       </picture>
