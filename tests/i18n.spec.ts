@@ -55,7 +55,7 @@ test("should translate page to french", async ({ page }) => {
   await page.getByRole("combobox").selectOption("Français - FR");
 
   const frenchHeading = page.getByRole("heading", {
-    name: "Votre Assistant d'Inscription",
+    name: "Votre assistant de changement d'adresse",
   });
 
   await expect(frenchHeading).toBeVisible();
