@@ -17,23 +17,23 @@
     "zustand": "4.5.2"
   },
   "devDependencies": {
-    "@playwright/test": "1.42.1",
-    "@types/node": "20.11.30",
-    "@types/react": "18.2.69",
-    "@types/react-dom": "18.2.22",
+    "@playwright/test": "1.43.0",
+    "@types/node": "20.12.5",
+    "@types/react": "18.2.74",
+    "@types/react-dom": "18.2.24",
     "@typescript-eslint/eslint-plugin": "6.21.0",
     "@typescript-eslint/parser": "6.21.0",
     "@vitejs/plugin-react": "4.2.1",
     "autoprefixer": "10.4.19",
-    "daisyui": "4.8.0",
+    "daisyui": "4.10.1",
     "eslint": "8.57.0",
     "eslint-plugin-react-hooks": "4.6.0",
     "eslint-plugin-react-refresh": "0.4.6",
     "postcss": "8.4.38",
     "prettier": "3.2.5",
-    "prettier-plugin-tailwindcss": "0.5.12",
-    "tailwindcss": "3.4.1",
-    "typescript": "5.4.3",
-    "vite": "5.2.6"
+    "prettier-plugin-tailwindcss": "0.5.13",
+    "tailwindcss": "3.4.3",
+    "typescript": "5.4.4",
+    "vite": "5.2.8"
   }
 }
