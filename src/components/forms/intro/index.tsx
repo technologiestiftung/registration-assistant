@@ -2,13 +2,13 @@ import { useProgressStore } from "../../steps/store";
 import { Appointment } from "../../appointment";
 import { PrimaryButton } from "../../buttons/primary-button";
 import { useI18n } from "../../../i18n/hook/useI18n";
-import { useTrackIntroPageView } from "./hooks/useTrackIntroPageView.tsx";
+import { useSaveIntroPageViewInSessionStorage } from "./hooks/use-save-intro-page-view-in-session-storage.tsx";
 
 export function Intro() {
   const goToNextStep = useProgressStore((state) => state.goToNextStep);
   const t = useI18n();
 
-  useTrackIntroPageView();
+  useSaveIntroPageViewInSessionStorage();
 
   return (
     <>

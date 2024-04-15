@@ -5,6 +5,7 @@ import { Appointment } from "../../appointment";
 import { SecondaryButton } from "../../buttons/secondary-button";
 import { useI18n } from "../../../i18n/hook/useI18n.tsx";
 import { trackInteraction } from "../../feedback/matomo.ts";
+import { useTrackGoalChecklistConversion } from "./hooks/use-track-goal-checklist-conversion.tsx";
 
 export function Overview() {
   const requiredDocs = useOverviewStore((state) => state.docs);
@@ -17,6 +18,8 @@ export function Overview() {
       Object.entries(requiredDocs).filter(([, value]) => value !== null),
     ),
   ];
+
+  useTrackGoalChecklistConversion();
 
   return (
     <div className="flex h-full flex-col gap-4">
